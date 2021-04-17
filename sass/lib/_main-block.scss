@@ -1,0 +1,133 @@
+.main-block {
+    display: flex;
+    z-index: 1;
+    position: relative;
+
+    &__bg {
+        width: 40%;
+        height: 100vh;
+        background-image: url("https://source.unsplash.com/1600x900?nature,water");
+        //background-image: url("https://media.giphy.com/media/Qgfz2N36MgUBG/giphy.gif");
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__email {
+        display: none;
+        position: absolute;
+        bottom: 20px;
+        left: 10%;
+        margin-top: 40px;
+        font-size: 20px;
+        b,
+        a {
+            font-family: "Ubuntu Mono";
+        }
+    }
+
+    &__info {
+        width: 60%;
+        position: relative;
+
+        &-center {
+            width: 630px;
+            @include center();
+
+            h1 {
+                font-family: "PT Mono", "PT Serif", serif, Helvetica, system-ui;
+                font-size: 100px;
+                letter-spacing: 0.9px;
+                line-height: 100px;
+                margin-bottom: 20px;
+                transition: text-shadow 0.3s ease-out;
+                width: 600px;
+            }
+
+            p {
+                font-family: "PT Mono";
+                font-size: 29px;
+                color: $base;
+                letter-spacing: -1px;
+                line-height: 61px;
+                width: 640px;
+
+                a {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .main-block__info--left {
+        h1 {
+            font-size: 100px;
+        }
+        p {
+            width: 100%;
+            font-size: 28px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .main-block__bg {
+        width: 100%;
+    }
+    .main-block__left {
+        width: 65%;
+        h1 {
+            font-size: 90px;
+        }
+        p {
+            font-size: 26px;
+        }
+    }
+    .main-block__info {
+        min-width: 520px;
+    }
+    .main-block__info-center {
+        width: 100%;
+        padding-left: 25px;
+        h1 {
+            font-size: 70px;
+            line-height: 78px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 30px;
+            a {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1441px) {
+    .main-block__bg,
+    .main-block__left {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .main-block__info {
+        min-width: 100%;
+    }
+    .main-block__info-center {
+        width: calc(100% - 50px);
+        padding-left: 15px;
+        padding-right: 15px;
+        h1 {
+            font-size: 40px;
+            line-height: 38px;
+            width: 100%;
+        }
+        p {
+            width: 100%;
+        }
+    }
+}
