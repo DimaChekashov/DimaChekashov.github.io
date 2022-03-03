@@ -1,0 +1,47 @@
+{
+  "name": "rebrain-white-hacking-v2",
+  "version": "1.0.0",
+  "description": "web-site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "DmitryChekashov <foxdima99@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "air-datepicker": "^2.2.3",
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cache": "^1.1.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "^3.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "inputmask": "^5.0.6",
+    "jquery-lazy": "^1.7.11",
+    "jquery-waypoints": "^2.0.5"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.10.2",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0",
+    "normalize.css": "^8.0.1",
+    "owl.carousel": "^2.3.4",
+    "simplebar": "^5.3.6",
+    "slick-carousel": "^1.8.1"
+  }
+}
