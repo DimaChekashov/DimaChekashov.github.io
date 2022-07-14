@@ -5,7 +5,7 @@ import './App.scss';
 const App: React.FC<AppProps> = () => {
   return (
     <div className="App">
-
+      App
     </div>
   );
 };
