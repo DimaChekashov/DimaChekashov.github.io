@@ -1,6 +1,6 @@
 import React from 'react';
 import { SkillsProps } from './Skills.props';
-import './Skills.scss';
+import styles from "./Skills.module.scss";
 
 const Skills: React.FC<SkillsProps> = () => {
   return (

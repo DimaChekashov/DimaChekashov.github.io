@@ -1,6 +1,6 @@
 import React from 'react';
 import { SidebarProps } from './Sidebar.props';
-import './Sidebar.scss';
+import styles from "./Sidebar.module.scss";
 
 const Sidebar: React.FC<SidebarProps> = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContactProps } from './Contact.props';
-import './Contact.scss';
+import styles from "./Contact.module.scss";
 
 const Contact: React.FC<ContactProps> = () => {
   return (

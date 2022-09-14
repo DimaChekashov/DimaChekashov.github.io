@@ -1,6 +1,6 @@
 import React from 'react';
 import { PortfolioProps } from './Portfolio.props';
-import './Portfolio.scss';
+import styles from "./Portfolio.module.scss";
 
 const Portfolio: React.FC<PortfolioProps> = () => {
   return (
