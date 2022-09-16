@@ -14,7 +14,7 @@ const Home: React.FC<HomeProps> = () => {
         et dolore magna aliqua. aaa
       </div>
       <button type="button">Let’s get started</button>
-      <img src={FoxSayImg} alt="" />
+      {/* <img src={FoxSayImg} alt="" /> */}
       <div>
         <a href="#">
           <img src="#" alt="Telegram" />

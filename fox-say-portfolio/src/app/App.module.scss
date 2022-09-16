@@ -1,6 +1,8 @@
 .App {
   display: flex;
+  min-height: 100vh;
   &Content {
     padding-left: 180px;
+    width: 100%;
   }
 }
