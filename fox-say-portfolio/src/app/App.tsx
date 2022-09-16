@@ -7,11 +7,13 @@ const App: React.FC<AppProps> = () => {
   return (
     <div className={styles.App}>
       <Sidebar />
-      <Home />
-      <About />
-      <Skills />
-      <Work />
-      <Contact />
+      <div className={styles.AppContent}>
+        <Home />
+        <About />
+        <Skills />
+        <Work />
+        <Contact />
+      </div>
     </div>
   );
 };
