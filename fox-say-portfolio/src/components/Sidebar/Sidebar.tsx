@@ -3,6 +3,7 @@ import {SidebarProps} from "./Sidebar.props";
 import FoxSayLogo from "./../../assets/foxsay-logo.svg";
 import styles from "./Sidebar.module.scss";
 import {NavLink} from "react-router-dom";
+import {Routes} from "../../utils/routes";
 
 const Sidebar: React.FC<SidebarProps> = () => {
   return (
@@ -13,20 +14,29 @@ const Sidebar: React.FC<SidebarProps> = () => {
         <div className={styles.sidebarLogoLabel}>Front-end Developer</div>
       </div>
       <nav className={styles.sidebarNav}>
-        <NavLink to="/" className={({isActive}) => styles.sidebarNavLink + (isActive ? ` ${styles.active}` : "")} end>
+        <NavLink
+          to={Routes.home}
+          className={({isActive}) => styles.sidebarNavLink + (isActive ? ` ${styles.active}` : "")}
+          end>
           Home
         </NavLink>
-        <NavLink to="/about" className={({isActive}) => styles.sidebarNavLink + (isActive ? ` ${styles.active}` : "")}>
+        <NavLink
+          to={Routes.about}
+          className={({isActive}) => styles.sidebarNavLink + (isActive ? ` ${styles.active}` : "")}>
           About
         </NavLink>
-        <NavLink to="/skills" className={({isActive}) => styles.sidebarNavLink + (isActive ? ` ${styles.active}` : "")}>
+        <NavLink
+          to={Routes.skills}
+          className={({isActive}) => styles.sidebarNavLink + (isActive ? ` ${styles.active}` : "")}>
           Skills
         </NavLink>
-        <NavLink to="/works" className={({isActive}) => styles.sidebarNavLink + (isActive ? ` ${styles.active}` : "")}>
+        <NavLink
+          to={Routes.works}
+          className={({isActive}) => styles.sidebarNavLink + (isActive ? ` ${styles.active}` : "")}>
           Works
         </NavLink>
         <NavLink
-          to="/contact"
+          to={Routes.contact}
           className={({isActive}) => styles.sidebarNavLink + (isActive ? ` ${styles.active}` : "")}>
           Contact
         </NavLink>
