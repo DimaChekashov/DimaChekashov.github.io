@@ -1,31 +1,31 @@
 import React from "react";
 import {HomeProps} from "./Home.props";
-import FoxSayImg from "./../../assets/foxsay.jpg";
+import FoxSayImg from "./../../assets/foxsay-no-bg.png";
 import styles from "./Home.module.scss";
 import ParticlesBackground from "../ParticlesBackground/ParticlesBackground";
 
 const Home: React.FC<HomeProps> = () => {
   return (
     <div className={styles.home}>
+      <div className={styles.homeLeft}>
+        <h1 className={styles.homeTitle}>
+          Hello,
+          <br />
+          I'm Dmitry Chekashov,
+          <br />
+          Front-end developer
+        </h1>
+        <button type="button" className={styles.homeBtn}>
+          Contact me!
+        </button>
+      </div>
+      <div className={styles.homeAvatar}>
+        <img src={FoxSayImg} alt="Dmitry portrait" className={styles.homeImg} />
+        <div className={styles.homeAvatarBlock}>
+          
+        </div>
+      </div>
       <ParticlesBackground dark={true} />
-      <h1>Dmitry Chekashov</h1>
-      <div>
-        Intro text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna aliqua. aaa
-      </div>
-      <button type="button">Let’s get started</button>
-      {/* <img src={FoxSayImg} alt="" /> */}
-      <div>
-        <a href="#">
-          <img src="#" alt="Telegram" />
-        </a>
-        <a href="#">
-          <img src="#" alt="Habr Career" />
-        </a>
-        <a href="#">
-          <img src="#" alt="Linkedin" />
-        </a>
-      </div>
     </div>
   );
 };
