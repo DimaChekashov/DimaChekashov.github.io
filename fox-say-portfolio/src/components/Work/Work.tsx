@@ -1,9 +1,16 @@
 import React from "react";
-import { WorkProps } from "./Work.props";
+import {WorkProps} from "./Work.props";
 import styles from "./Work.module.scss";
 
 const Work: React.FC<WorkProps> = () => {
-    return <div className="work">Work</div>;
+  return (
+    <div className={styles.work}>
+      <h2 className={styles.workTitle}>Portfolio</h2>
+      <div className={styles.workItem}>
+        
+      </div>
+    </div>
+  );
 };
 
 export default Work;
