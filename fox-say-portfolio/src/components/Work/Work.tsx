@@ -7,7 +7,17 @@ const Work: React.FC<WorkProps> = () => {
     <div className={styles.work}>
       <h2 className={styles.workTitle}>Portfolio</h2>
       <div className={styles.workItem}>
-        
+        <img src="" alt="photo" className={styles.workImg} />
+        <img src="" alt="photo" className={styles.workImg} />
+        <img src="" alt="photo" className={styles.workImg} />
+        <img src="" alt="photo" className={styles.workImg} />
+        <img src="" alt="photo" className={styles.workImg} />
+        <img src="" alt="photo" className={styles.workImg} />
+        <img src="" alt="photo" className={styles.workImg} />
+        <img src="" alt="photo" className={styles.workImg} />
+        <img src="" alt="photo" className={styles.workImg} />
+        <img src="" alt="photo" className={styles.workImg} />
+        <img src="" alt="photo" className={styles.workImg} />
       </div>
     </div>
   );
