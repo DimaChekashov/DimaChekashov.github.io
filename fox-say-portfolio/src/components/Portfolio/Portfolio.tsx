@@ -4,7 +4,7 @@ import styles from "./Portfolio.module.scss";
 
 const Portfolio: React.FC<PortfolioProps> = () => {
   return (
-    <div className="portfolio">
+    <div className={styles.portfolio}>
       Portfolio
     </div>
   );
