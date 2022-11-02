@@ -1,7 +1,25 @@
 .skills {
+  background-color: green;
+  height: 100%;
+  padding: 35px 30px;
+  display: flex;
+  align-items: center;
   &Title {
+    font-size: 50px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 26px;
+    color: var(--font-color);
   }
   &Desc {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--font-color);
+    opacity: 0.9;
+    margin-bottom: 16px;
+  }
+  &Block {
+    max-width: 50%;
   }
 }
 
@@ -11,9 +29,12 @@
 .company {
   &Title {
   }
+  &Location {
+
+  }
   &Date {
   }
-  &Desc {
+  &List {
   }
 }
 
