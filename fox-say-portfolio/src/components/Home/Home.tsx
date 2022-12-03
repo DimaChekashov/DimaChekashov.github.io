@@ -7,24 +7,18 @@ import ParticlesBackground from "../ParticlesBackground/ParticlesBackground";
 const Home: React.FC<HomeProps> = () => {
   return (
     <div className={styles.home}>
-      <div className={styles.homeLeft}>
-        <h1 className={styles.homeTitle}>
-          Hello,
-          <br />
-          I'm Dmitry Chekashov,
-          <br />
-          Front-end developer
-        </h1>
-        <button type="button" className={styles.homeBtn}>
-          Contact me!
-        </button>
-      </div>
+      <h1 className={styles.homeTitle}>
+        Hello, I'm Dmitry Chekashov, Front-end developer
+      </h1>
+      <h2 className={styles.homeSubtitle}>
+        I develop beautifully  things, and I love what I do.
+      </h2>
       <div className={styles.homeAvatar}>
         <img src={FoxSayImg} alt="Dmitry portrait" className={styles.homeImg} />
-        <div className={styles.homeAvatarBlock}>
-          
-        </div>
       </div>
+      <button type="button" className={styles.homeBtn}>
+        Contact me!
+      </button>
       <ParticlesBackground dark={true} />
     </div>
   );

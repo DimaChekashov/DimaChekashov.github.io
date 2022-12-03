@@ -7,7 +7,7 @@ import styles from "./ParticlesBackground.module.scss";
 
 enum colors {
   darkTheme = "#bc6ff1",
-  lightTheme = "#3f72af"
+  lightTheme = "#5ca5ff"
 }
 
 interface Props {
