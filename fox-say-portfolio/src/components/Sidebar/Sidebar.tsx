@@ -1,9 +1,9 @@
 import React from "react";
 import {SidebarProps} from "./Sidebar.props";
 import FoxSayLogo from "./../../assets/foxsay-logo.svg";
-import styles from "./Sidebar.module.scss";
 import {NavLink} from "react-router-dom";
 import {Routes} from "../../utils/routes";
+import styles from "./Sidebar.module.scss";
 
 const Sidebar: React.FC<SidebarProps> = () => {
   return (

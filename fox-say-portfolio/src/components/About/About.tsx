@@ -1,6 +1,8 @@
 import React from "react";
 import {AboutProps} from "./About.props";
+import {Routes} from "../../utils/routes";
 import styles from "./About.module.scss";
+import { NavLink } from "react-router-dom";
 
 const About: React.FC<AboutProps> = () => {
   return (
@@ -8,19 +10,11 @@ const About: React.FC<AboutProps> = () => {
       <div className={styles.aboutBlock}>
         <h2 className={styles.aboutTitle}>My, Myself & I</h2>
         <div className={styles.aboutDesc}>
-          A frontend developer with 4 years of extensive experience in Web Development.
+          A frontend developer with 4 years of extensive experience in Web Development. Having a Strong skills in responsive & interactive HTML development and Solid skills in Javascript(ES6+). I am driven by roles that will leverage my strengths in Frontend.
         </div>
-        <div className={styles.aboutDesc}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. A dolorem nobis provident adipisci, temporibus odit
-          suscipit. Culpa nemo cupiditate natus, quibusdam dolorem quod labore. Voluptas exercitationem labore fuga magnam
-          harum.
-        </div>
-        <div className={styles.aboutDesc}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. A dolorem nobis provident adipisci, temporibus odit
-          suscipit. Culpa nemo cupiditate natus, quibusdam dolorem quod labore. Voluptas exercitationem labore fuga magnam
-          harum.
-        </div>
-        <div className={styles.aboutLink}>Lets do something!</div>
+        <NavLink className={styles.aboutLink} to={Routes.contact}>
+          Let’s make something special.
+        </NavLink>
       </div>
     </div>
   );

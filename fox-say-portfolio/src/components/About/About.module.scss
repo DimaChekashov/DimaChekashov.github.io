@@ -1,5 +1,4 @@
 .about {
-  background-color: red;
   height: 100%;
   padding: 35px 30px;
   display: flex;
@@ -24,6 +23,13 @@
     max-width: 50%;
   }
   &Link {
-
+    font-size: 18px;
+    line-height: 1.1;
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--secondary-color);
+    &:hover {
+      border-color: transparent;
+    }
   }
 }
