@@ -14,6 +14,10 @@
   --white-color: #ffffff; // rgb(255, 255, 255)
 
   --sidebar-bg: #f0f0f0;
+
+  --card-bg: #ffffff;
+
+  --card-shadow: rgba(0, 0, 0, 0.1);
 }
 
 [dark] {
@@ -30,4 +34,8 @@
   --tertiary-color: #bc6ff1; // rgb(188, 111, 241)
 
   --sidebar-bg: #333333;
+
+  --card-bg: #333333;
+
+  --card-shadow: rgba(255, 255, 255, 0.1);
 }

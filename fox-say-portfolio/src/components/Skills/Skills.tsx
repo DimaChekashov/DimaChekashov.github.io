@@ -1,23 +1,47 @@
 import React from "react";
 import {SkillsProps} from "./Skills.props";
+import HtmlIcon from "./../../assets/skills/html5-original.svg";
+import CssIcon from "./../../assets/skills/css3-original.svg";
+import JavaScriptIcon from "./../../assets/skills/javascript-original.svg";
+import TypeScriptIcon from "./../../assets/skills/typescript-original.svg";
+import ReactIcon from "./../../assets/skills/react-original.svg";
+import ReduxIcon from "./../../assets/skills/redux-original.svg";
+import SassIcon from "./../../assets/skills/sass-original.svg";
+import BootstrapIcon from "./../../assets/skills/bootstrap-original.svg";
+import GitIcon from "./../../assets/skills/git-original.svg";
+import GulpIcon from "./../../assets/skills/gulp-plain.svg";
 import styles from "./Skills.module.scss";
 
 const Skills: React.FC<SkillsProps> = () => {
   return (
     <div className={styles.skills}>
-      <div className={styles.skillsBlock}>
-        <h2 className={styles.skillsTitle}>Skills & Experience</h2>
-        <div className={styles.skillsDesc}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quae corrupti adipisci libero non minus omnis
-          similique, veniam beatae, dignissimos repellendus minima harum necessitatibus blanditiis. Excepturi vero
-          corporis adipisci earum.
-        </div>
-        <div className={styles.skillsDesc}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quae corrupti adipisci libero non minus omnis
-          similique, veniam beatae, dignissimos repellendus minima harum necessitatibus blanditiis. Excepturi vero
-          corporis adipisci earum.
-        </div>
+      <h2 className={styles.skillsTitle}>Skills</h2>
+      <h3 className={styles.skillsSubtitle}>
+        Languages:
+      </h3>
+      <div className={styles.skillsItems}>
+        <img src={HtmlIcon} alt="html icon" className={styles.skillsItem} />
+        <img src={CssIcon} alt="css icon" className={styles.skillsItem} />
+        <img src={JavaScriptIcon} alt="javascript icon" className={styles.skillsItem} />
+        <img src={TypeScriptIcon} alt="typescript icon" className={styles.skillsItem} />
       </div>
+      <h3 className={styles.skillsSubtitle}>
+        Libraries:
+      </h3>
+      <div className={styles.skillsItems}>
+        <img src={ReactIcon} alt="react icon" className={styles.skillsItem} />
+        <img src={ReduxIcon} alt="redux icon" className={styles.skillsItem} />
+        <img src={BootstrapIcon} alt="bootstrap icon" className={styles.skillsItem} />
+      </div>
+      <h3 className={styles.skillsSubtitle}>
+        Tools:
+      </h3>
+      <div className={styles.skillsItems}>
+        <img src={SassIcon} alt="sass icon" className={styles.skillsItem} />
+        <img src={GulpIcon} alt="gulp icon" className={styles.skillsItem} />
+        <img src={GitIcon} alt="git icon" className={styles.skillsItem} />
+      </div>
+      <h2 className={styles.skillsTitle}>Experience</h2>
       <div className={styles.companies}>
         <div className={styles.company}>
           <h3 className={styles.companyTitle}>Rebrain - <span>Frontend Developer</span></h3>
