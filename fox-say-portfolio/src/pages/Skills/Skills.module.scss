@@ -13,6 +13,15 @@
     line-height: 1.1;
     margin-bottom: 15px;
   }
+  &Grid {
+    display: grid;
+    grid-template-columns: repeat(3, 270px);
+    gap: 50px;
+    justify-content: center;
+    &Column {
+
+    }
+  }
   &Items {
     display: inline-flex;
     flex-wrap: wrap;

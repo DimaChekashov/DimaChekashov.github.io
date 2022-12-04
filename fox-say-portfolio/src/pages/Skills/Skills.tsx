@@ -16,30 +16,38 @@ const Skills: React.FC<SkillsProps> = () => {
   return (
     <div className={styles.skills}>
       <h2 className={styles.skillsTitle}>Skills</h2>
-      <h3 className={styles.skillsSubtitle}>
-        Languages:
-      </h3>
-      <div className={styles.skillsItems}>
-        <img src={HtmlIcon} alt="html icon" className={styles.skillsItem} />
-        <img src={CssIcon} alt="css icon" className={styles.skillsItem} />
-        <img src={JavaScriptIcon} alt="javascript icon" className={styles.skillsItem} />
-        <img src={TypeScriptIcon} alt="typescript icon" className={styles.skillsItem} />
-      </div>
-      <h3 className={styles.skillsSubtitle}>
-        Libraries:
-      </h3>
-      <div className={styles.skillsItems}>
-        <img src={ReactIcon} alt="react icon" className={styles.skillsItem} />
-        <img src={ReduxIcon} alt="redux icon" className={styles.skillsItem} />
-        <img src={BootstrapIcon} alt="bootstrap icon" className={styles.skillsItem} />
-      </div>
-      <h3 className={styles.skillsSubtitle}>
-        Tools:
-      </h3>
-      <div className={styles.skillsItems}>
-        <img src={SassIcon} alt="sass icon" className={styles.skillsItem} />
-        <img src={GulpIcon} alt="gulp icon" className={styles.skillsItem} />
-        <img src={GitIcon} alt="git icon" className={styles.skillsItem} />
+      <div className={styles.skillsGrid}>
+        <div className={styles.skillsGridColumn}>
+          <h3 className={styles.skillsSubtitle}>
+            Languages:
+          </h3>
+          <div className={styles.skillsItems}>
+            <img src={HtmlIcon} alt="html icon" className={styles.skillsItem} />
+            <img src={CssIcon} alt="css icon" className={styles.skillsItem} />
+            <img src={JavaScriptIcon} alt="javascript icon" className={styles.skillsItem} />
+            <img src={TypeScriptIcon} alt="typescript icon" className={styles.skillsItem} />
+          </div>
+        </div>
+        <div className={styles.skillsGridColumn}>
+          <h3 className={styles.skillsSubtitle}>
+            Libraries:
+          </h3>
+          <div className={styles.skillsItems}>
+            <img src={ReactIcon} alt="react icon" className={styles.skillsItem} />
+            <img src={ReduxIcon} alt="redux icon" className={styles.skillsItem} />
+            <img src={BootstrapIcon} alt="bootstrap icon" className={styles.skillsItem} />
+          </div>
+        </div>
+        <div className={styles.skillsGridColumn}>
+          <h3 className={styles.skillsSubtitle}>
+            Tools:
+          </h3>
+          <div className={styles.skillsItems}>
+            <img src={SassIcon} alt="sass icon" className={styles.skillsItem} />
+            <img src={GulpIcon} alt="gulp icon" className={styles.skillsItem} />
+            <img src={GitIcon} alt="git icon" className={styles.skillsItem} />
+          </div>
+        </div>
       </div>
       <h2 className={styles.skillsTitle}>Experience</h2>
       <div className={styles.companies}>

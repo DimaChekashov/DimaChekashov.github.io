@@ -1,9 +1,14 @@
 import React from "react";
-import {About, Contact, Home, Sidebar, Skills, Work} from "../components";
 import {AppProps} from "./App.props";
 import styles from "./App.module.scss";
 import {Route, Routes} from "react-router-dom";
 import {Routes as RoutesHref} from "../utils/routes";
+import Sidebar from "../components/Sidebar/Sidebar";
+import Home from "../pages/Home/Home";
+import About from "../pages/About/About";
+import Skills from "../pages/Skills/Skills";
+import Work from "../components/Work/Work";
+import Contact from "../pages/Contact/Contact";
 
 const App: React.FC<AppProps> = () => {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import {HomeProps} from "./Home.props";
 import FoxSayImg from "./../../assets/foxsay-no-bg.png";
 import styles from "./Home.module.scss";
-import ParticlesBackground from "../ParticlesBackground/ParticlesBackground";
+import ParticlesBackground from "../../components/ParticlesBackground/ParticlesBackground";
 
 const Home: React.FC<HomeProps> = () => {
   return (
