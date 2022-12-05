@@ -2,7 +2,9 @@ import React from "react";
 import {HomeProps} from "./Home.props";
 import FoxSayImg from "./../../assets/foxsay-no-bg.png";
 import styles from "./Home.module.scss";
+import {Routes} from "../../utils/routes";
 import ParticlesBackground from "../../components/ParticlesBackground/ParticlesBackground";
+import { NavLink } from "react-router-dom";
 
 const Home: React.FC<HomeProps> = () => {
   return (
@@ -16,9 +18,9 @@ const Home: React.FC<HomeProps> = () => {
       <div className={styles.homeAvatar}>
         <img src={FoxSayImg} alt="Dmitry portrait" className={styles.homeImg} />
       </div>
-      <button type="button" className={styles.homeBtn}>
-        Contact me!
-      </button>
+      <NavLink className={styles.homeBtn} to={Routes.contact}>
+          Contact me!
+      </NavLink>
       <ParticlesBackground dark={true} />
     </div>
   );

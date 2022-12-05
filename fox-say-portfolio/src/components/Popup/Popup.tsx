@@ -1,8 +1,8 @@
 import React from 'react';
-import { WorkPopupProps } from './WorkPopup.props';
-import styles from "./WorkPopup.module.scss";
+import { PopupProps } from './Popup.props';
+import styles from "./Popup.module.scss";
 
-const WorkPopup: React.FC<WorkPopupProps> = ({children, title, isOpen, setPopupIsOpen}) => {
+const Popup: React.FC<PopupProps> = ({children, title, isOpen, setPopupIsOpen}) => {
 
   const closePopup = () => {
     setPopupIsOpen(false);
@@ -29,4 +29,4 @@ const WorkPopup: React.FC<WorkPopupProps> = ({children, title, isOpen, setPopupI
   );
 };
 
-export default WorkPopup;
+export default Popup;

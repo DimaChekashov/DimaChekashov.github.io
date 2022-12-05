@@ -1,8 +1,8 @@
 import React from "react";
 import {AboutProps} from "./About.props";
 import {Routes} from "../../utils/routes";
-import styles from "./About.module.scss";
 import { NavLink } from "react-router-dom";
+import styles from "./About.module.scss";
 
 const About: React.FC<AboutProps> = () => {
   return (

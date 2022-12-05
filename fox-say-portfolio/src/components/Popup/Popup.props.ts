@@ -1,4 +1,4 @@
-export interface WorkPopupProps {
+export interface PopupProps {
     title: string;
     isOpen: boolean;
     children: React.ReactNode;

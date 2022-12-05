@@ -7,7 +7,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Skills from "../pages/Skills/Skills";
-import Work from "../components/Work/Work";
+import Work from "../pages/Work/Work";
 import Contact from "../pages/Contact/Contact";
 
 const App: React.FC<AppProps> = () => {
