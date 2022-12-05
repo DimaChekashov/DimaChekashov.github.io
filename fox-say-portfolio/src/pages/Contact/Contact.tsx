@@ -6,11 +6,6 @@ const Contact: React.FC<ContactProps> = () => {
   return (
     <div className={styles.contact}>
       <h2 className={styles.contactTitle}>Contact me</h2>
-      <div className={styles.contactDesc}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nemo possimus fuga laboriosam numquam. Quos,
-        doloremque sunt ipsa voluptatem, nihil incidunt perspiciatis maxime, quae labore eaque tempora. Molestiae, rem
-        ab?
-      </div>
       <form className={styles.contactForm}>
         <input type="text" className={styles.contactInput} placeholder="Name" />
         <input type="text" className={styles.contactInput} placeholder="Email" />

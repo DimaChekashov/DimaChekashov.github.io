@@ -11,6 +11,7 @@
     background-position: center center;
     background-color: #ffffff;
     transition: background-size 0.3s ease-in-out;
+    background-size: 60%;
     &.dark {
         background-color: #1f1f1f;
     }
@@ -59,6 +60,7 @@
         transition: background-color 0.1s ease-in-out;
     }
     &:hover {
+        background-size: 70%;
         .workCardLabel {
             transform: scale(1);
         }
