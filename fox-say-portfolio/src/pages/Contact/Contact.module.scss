@@ -1,5 +1,4 @@
 .contact {
-  background-color: orange;
   height: 100%;
   padding: 20px;
   display: flex;
@@ -7,7 +6,7 @@
   align-items: center;
   justify-content: center;
   &Title {
-    font-size: 30px;
+    font-size: 40px;
     line-height: 1.1;
     text-align: center;
     margin-bottom: 30px;
@@ -17,16 +16,58 @@
     box-shadow: 0 10px 15px 1px var(--card-shadow);
     max-width: 500px;
     width: 100%;
-    padding: 30px 20px;
+    padding: 40px 30px 50px;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
   }
   &Input {
     margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 0;
+    color: #3f3f3f;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.069);
+    transition: background-color 0.3s ease-in-out;
+    &:focus {
+      outline: none;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
   &Textarea {
     margin-bottom: 30px;
+    border-radius: 5px;
+    border: 0;
+    padding: 10px 20px;
+    color: #3f3f3f;
+    font-size: 16px;
+    height: 100px;
+    max-height: 400px;
+    resize: vertical;
+    background-color: rgba(0, 0, 0, 0.069);
+    transition: background-color 0.3s ease-in-out;
+    &:focus {
+      outline: none;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
   &Btn {
+    border: 0;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: var(--secondary-color);
+    transition: background-color 0.3s ease-in-out;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: var(--tertiary-color);
+    }
   }
 }

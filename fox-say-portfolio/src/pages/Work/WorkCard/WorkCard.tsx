@@ -1,13 +1,21 @@
-import React from 'react';
-import { WorkCardProps } from './WorkCard.props';
+import React, { useCallback } from 'react';
+import { Project } from '../WorkCardList/projects';
 import styles from "./WorkCard.module.scss";
 
-const WorkCard: React.FC<WorkCardProps> = ({imageUrl = "", onClick, theme}) => {
+export interface Props {
+  onClick: (title: string, imageUrl: string) => void;
+  project: Project;
+}
+
+const WorkCard: React.FC<Props> = ({project: { name, theme, logoImgUrl, layoutImgUrl}, onClick}) => {
+  
+  const click = useCallback(() => onClick(name, layoutImgUrl), [onClick, name, layoutImgUrl]);
+
   return (
     <div 
       className={`${styles.workCard} ${styles[theme]}`} 
-      onClick={onClick}
-      style={{backgroundImage: `url(${imageUrl})`}} 
+      style={{backgroundImage: `url(${logoImgUrl})`}} 
+      onClick={click}
     >
       <div className={styles.workCardLabel}>
         View<br/> Project

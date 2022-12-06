@@ -12,7 +12,7 @@ const Contact: React.FC<ContactProps> = () => {
         <input type="text" className={styles.contactInput} placeholder="Subject" />
         <textarea className={styles.contactTextarea} placeholder="Message" />
         <button type="submit" className={styles.contactBtn}>
-          Send message!
+          Send message
         </button>
       </form>
     </div>
