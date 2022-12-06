@@ -1,8 +1,7 @@
 import React from "react";
-import {ContactProps} from "./Contact.props";
 import styles from "./Contact.module.scss";
 
-const Contact: React.FC<ContactProps> = () => {
+const Contact: React.FC = () => {
   return (
     <div className={styles.contact}>
       <h2 className={styles.contactTitle}>Contact me</h2>

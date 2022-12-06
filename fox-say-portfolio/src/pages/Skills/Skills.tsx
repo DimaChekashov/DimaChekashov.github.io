@@ -1,5 +1,4 @@
 import React from "react";
-import {SkillsProps} from "./Skills.props";
 import HtmlIcon from "./../../assets/skills/html5-original.svg";
 import CssIcon from "./../../assets/skills/css3-original.svg";
 import JavaScriptIcon from "./../../assets/skills/javascript-original.svg";
@@ -12,7 +11,7 @@ import GitIcon from "./../../assets/skills/git-original.svg";
 import GulpIcon from "./../../assets/skills/gulp-plain.svg";
 import styles from "./Skills.module.scss";
 
-const Skills: React.FC<SkillsProps> = () => {
+const Skills: React.FC = () => {
   return (
     <div className={styles.skills}>
       <h2 className={styles.skillsTitle}>Skills</h2>

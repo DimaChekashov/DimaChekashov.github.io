@@ -1,12 +1,18 @@
 import React from 'react';
-import { PopupProps } from './Popup.props';
-import styles from "./Popup.module.scss";
+import { useDispatch } from 'react-redux';
+import { setPopupIsOpen } from '../../../features/workPopup/workPopupSlice';
+import styles from "./WorkPopup.module.scss";
 
-const Popup: React.FC<PopupProps> = ({children, title, isOpen, setPopupIsOpen}) => {
+export interface Props {
+    title: string;
+    isOpen: boolean;
+    children: React.ReactNode;
+}
 
-  const closePopup = () => {
-    setPopupIsOpen(false);
-  }
+const WorkPopup: React.FC<Props> = ({children, title, isOpen}) => {
+  const dispatch = useDispatch();
+
+  const closePopup = () => dispatch(setPopupIsOpen(false));
 
   return (
     <>
@@ -29,4 +35,4 @@ const Popup: React.FC<PopupProps> = ({children, title, isOpen, setPopupIsOpen}) 
   );
 };
 
-export default Popup;
+export default WorkPopup;

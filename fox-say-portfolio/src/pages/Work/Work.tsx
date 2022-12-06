@@ -1,24 +1,21 @@
-import React, { useCallback, useState } from "react";
-import {WorkProps} from "./Work.props";
-import Popup from "../../components/Popup/Popup";
-import WorkCardList from "./WorkCardList/WorkCardList";
+import React from "react";
+import Popup from "./WorkPopup/WorkPopup";
+import WorkCardList from "./WorkList/WorkList";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 import styles from "./Work.module.scss";
 
-const Work: React.FC<WorkProps> = () => {
-  const [popupIsOpen, setPopupIsOpen] = useState<boolean>(false);
-  const [popupTitle, setPopupTitle] = useState<string>("");
-  const [popupImgUrl, setPopupImgUrl] = useState<string>("");
-
-  const openPopup = useCallback((title: string, imageUrl: string) => {
-    setPopupIsOpen(true);
-    setPopupTitle(title);
-    setPopupImgUrl(imageUrl);
-  }, []);
+const Work: React.FC = () => {
+  const {
+    popupTitle, 
+    popupImgUrl, 
+    popupIsOpen
+  } = useSelector((state: RootState) => state.workPopup);
 
   return (
     <>
-      <WorkCardList onClick={openPopup} />
-      <Popup title={popupTitle} isOpen={popupIsOpen} setPopupIsOpen={setPopupIsOpen}>
+      <WorkCardList />
+      <Popup title={popupTitle} isOpen={popupIsOpen}>
         <img src={popupImgUrl} alt={popupTitle} />
       </Popup>
     </>

@@ -1,21 +1,27 @@
 import React, { useCallback } from 'react';
-import { Project } from '../WorkCardList/projects';
+import { useDispatch } from 'react-redux';
+import { setImageUrl, setPopupIsOpen, setTitle } from '../../../features/workPopup/workPopupSlice';
+import { Project } from '../WorkList/projects';
 import styles from "./WorkCard.module.scss";
 
 export interface Props {
-  onClick: (title: string, imageUrl: string) => void;
   project: Project;
 }
 
-const WorkCard: React.FC<Props> = ({project: { name, theme, logoImgUrl, layoutImgUrl}, onClick}) => {
+const WorkCard: React.FC<Props> = ({project: { name, theme, logoImgUrl, layoutImgUrl}}) => {
+  const dispatch = useDispatch();
   
-  const click = useCallback(() => onClick(name, layoutImgUrl), [onClick, name, layoutImgUrl]);
+  const openWork = useCallback(() => {
+    dispatch(setTitle(name));
+    dispatch(setImageUrl(layoutImgUrl));
+    dispatch(setPopupIsOpen(true));
+  }, [dispatch, name, layoutImgUrl]);
 
   return (
     <div 
       className={`${styles.workCard} ${styles[theme]}`} 
       style={{backgroundImage: `url(${logoImgUrl})`}} 
-      onClick={click}
+      onClick={openWork}
     >
       <div className={styles.workCardLabel}>
         View<br/> Project

@@ -1,10 +1,9 @@
 import React from "react";
-import {AboutProps} from "./About.props";
 import {Routes} from "../../utils/routes";
 import { NavLink } from "react-router-dom";
 import styles from "./About.module.scss";
 
-const About: React.FC<AboutProps> = () => {
+const About: React.FC = () => {
   return (
     <div className={styles.about}>
       <div className={styles.aboutBlock}>

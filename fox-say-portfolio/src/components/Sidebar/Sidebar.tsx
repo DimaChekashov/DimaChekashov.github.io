@@ -1,11 +1,10 @@
 import React from "react";
-import {SidebarProps} from "./Sidebar.props";
 import FoxSayLogo from "./../../assets/foxsay-logo.svg";
 import {NavLink} from "react-router-dom";
 import {Routes} from "../../utils/routes";
 import styles from "./Sidebar.module.scss";
 
-const Sidebar: React.FC<SidebarProps> = () => {
+const Sidebar: React.FC = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebarLogo}>
