@@ -1,11 +1,18 @@
 import React from "react";
 import {Routes} from "../../utils/routes";
 import { NavLink } from "react-router-dom";
+import {motion} from "framer-motion";
 import styles from "./About.module.scss";
+import Loader from "../../components/Loader/Loader";
 
 const About: React.FC = () => {
   return (
-    <div className={styles.about}>
+    <motion.div 
+      className={styles.about}
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+    >
       <div className={styles.aboutBlock}>
         <h2 className={styles.aboutTitle}>My, Myself & I</h2>
         <div className={styles.aboutDesc}>
@@ -15,7 +22,8 @@ const About: React.FC = () => {
           Let’s make something special.
         </NavLink>
       </div>
-    </div>
+      <Loader />
+    </motion.div>
   );
 };
 

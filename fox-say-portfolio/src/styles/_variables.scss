@@ -18,6 +18,8 @@
   --card-bg: #ffffff;
 
   --card-shadow: rgba(0, 0, 0, 0.1);
+
+  --progress-bar-color: rgba(0, 0, 0, 0.1);
 }
 
 [dark] {
@@ -38,4 +40,6 @@
   --card-bg: #333333;
 
   --card-shadow: rgba(255, 255, 255, 0.1);
+
+  --progress-bar-color: rgba(255, 255, 255, 0.1);
 }

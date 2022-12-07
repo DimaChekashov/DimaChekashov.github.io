@@ -1,13 +1,20 @@
 import React from "react";
 import FoxSayImg from "./../../assets/foxsay-no-bg.png";
-import styles from "./Home.module.scss";
 import {Routes} from "../../utils/routes";
 import ParticlesBackground from "../../components/ParticlesBackground/ParticlesBackground";
 import { NavLink } from "react-router-dom";
+import {motion} from "framer-motion";
+import styles from "./Home.module.scss";
+import Loader from "../../components/Loader/Loader";
 
 const Home: React.FC = () => {
   return (
-    <div className={styles.home}>
+    <motion.div 
+      className={styles.home}
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+    >
       <h1 className={styles.homeTitle}>
         Hello, I'm Dmitry Chekashov, Front-end developer
       </h1>
@@ -21,7 +28,8 @@ const Home: React.FC = () => {
           Contact me!
       </NavLink>
       <ParticlesBackground dark={true} />
-    </div>
+      <Loader />
+    </motion.div>
   );
 };
 

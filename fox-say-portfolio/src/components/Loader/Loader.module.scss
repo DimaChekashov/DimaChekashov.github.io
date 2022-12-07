@@ -1,0 +1,56 @@
+.loader {
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    right: 0;
+    width: calc(100% - 180px);
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: blockAnimation 3s ease forwards;
+    &Progress {
+        background-color: var(--progress-bar-color);
+        width: 100%;
+        max-width: 500px;
+        height: 15px;
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+        &::before {
+            content: "";
+            background-color: var(--secondary-color);
+            position: absolute;
+            height: 100%;
+            width: 0%;
+            top: 0;
+            left: 0;
+            animation: progressAnimation 1s ease 1s forwards;
+        }
+    }
+}
+
+@keyframes blockAnimation {
+    0% {
+        transform: translate(-100%);
+    }
+    20% {
+        transform: translate(0%);
+    }
+    70% {
+        transform: translate(0%);
+    }
+    100% {
+        transform: translate(100%);
+    }
+}
+
+@keyframes progressAnimation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}

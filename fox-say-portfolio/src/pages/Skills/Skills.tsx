@@ -9,11 +9,18 @@ import SassIcon from "./../../assets/skills/sass-original.svg";
 import BootstrapIcon from "./../../assets/skills/bootstrap-original.svg";
 import GitIcon from "./../../assets/skills/git-original.svg";
 import GulpIcon from "./../../assets/skills/gulp-plain.svg";
+import {motion} from "framer-motion";
 import styles from "./Skills.module.scss";
+import Loader from "../../components/Loader/Loader";
 
 const Skills: React.FC = () => {
   return (
-    <div className={styles.skills}>
+    <motion.div 
+      className={styles.skills}
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+    >
       <h2 className={styles.skillsTitle}>Skills</h2>
       <div className={styles.skillsGrid}>
         <div className={styles.skillsGridColumn}>
@@ -88,7 +95,8 @@ const Skills: React.FC = () => {
       <div className={styles.technology}>
         
       </div>
-    </div>
+      <Loader />
+    </motion.div>
   );
 };
 
