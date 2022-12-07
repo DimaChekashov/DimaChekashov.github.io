@@ -65,7 +65,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    margin-bottom: auto;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     gap: 8px;
@@ -84,5 +84,30 @@
         }
       }
     }
+  }
+}
+
+.lightSwitch {
+  border: 0;
+  width: 40px;
+  height: 40px;
+  padding: 7px;
+  margin-bottom: auto;
+  align-self: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.2s ease-in-out;
+  svg {
+    fill: var(--font-color);
+    path {
+      fill-rule: evenodd;
+    }
+  }
+  &:hover {
+      background-color: rgba(157, 157, 157, 0.116);
+  }
+  &:focus {
+    outline: none;
   }
 }

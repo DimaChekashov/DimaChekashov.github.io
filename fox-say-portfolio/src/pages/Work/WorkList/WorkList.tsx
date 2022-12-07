@@ -6,7 +6,8 @@ import styles from "./WorkList.module.scss";
 interface Props {
 }
 
-const WorkList: React.FC<Props> = memo(() => {
+const WorkList: React.FC<Props> = () => {
+    console.log("WorkList: render!");
     return (
         <div className={styles.workList}>
             {projects.map(project => 
@@ -17,6 +18,6 @@ const WorkList: React.FC<Props> = memo(() => {
             )}
         </div>
     )
-});
+};
 
 export default WorkList;

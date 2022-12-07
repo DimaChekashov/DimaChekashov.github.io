@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { setImageUrl, setPopupIsOpen, setTitle } from '../../../features/workPopup/workPopupSlice';
+import { setData } from '../workPopupSlice';
 import { Project } from '../WorkList/projects';
 import styles from "./WorkCard.module.scss";
 
@@ -12,10 +12,11 @@ const WorkCard: React.FC<Props> = ({project: { name, theme, logoImgUrl, layoutIm
   const dispatch = useDispatch();
   
   const openWork = useCallback(() => {
-    dispatch(setTitle(name));
-    dispatch(setImageUrl(layoutImgUrl));
-    dispatch(setPopupIsOpen(true));
-  }, [dispatch, name, layoutImgUrl]);
+    dispatch(setData({
+      title: name,
+      imgUrl: layoutImgUrl
+    }));
+  }, [name, layoutImgUrl]);
 
   return (
     <div 

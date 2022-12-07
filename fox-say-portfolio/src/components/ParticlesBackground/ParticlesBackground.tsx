@@ -4,17 +4,22 @@ import type {Engine, Container} from "tsparticles-engine";
 import {loadFull} from "tsparticles";
 
 import styles from "./ParticlesBackground.module.scss";
+import { theme } from "../Sidebar/themeSlice";
+import { useSelector } from "react-redux";
 
-enum colors {
+enum circleColors {
   darkTheme = "#bc6ff1",
   lightTheme = "#5ca5ff"
 }
 
-interface Props {
-  dark: boolean;
+enum backgroundColors {
+  darkTheme = "#000000",
+  lightTheme = "#f9f7f7"
 }
 
-const ParticlesBackground: React.FC<Props> = ({dark}) => {
+const ParticlesBackground: React.FC = () => {
+  const themeStatus = useSelector(theme.status);
+  
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
@@ -22,6 +27,10 @@ const ParticlesBackground: React.FC<Props> = ({dark}) => {
   const particlesLoaded = useCallback(async (container: Container | undefined) => {
     await console.log(container);
   }, []);
+
+  const checkTheme = (colors: {lightTheme: string, darkTheme: string}): string => {
+    return themeStatus === "light" ? colors.lightTheme : colors.darkTheme;
+  }
 
   return (
     <Particles
@@ -36,7 +45,7 @@ const ParticlesBackground: React.FC<Props> = ({dark}) => {
         },
         background: {
           color: {
-            value: "var(--background-color)"
+            value: checkTheme(backgroundColors)
           }
         },
         fpsLimit: 120,
@@ -87,13 +96,13 @@ const ParticlesBackground: React.FC<Props> = ({dark}) => {
             }
           },
           color: {
-            value: !dark ? colors.darkTheme : colors.lightTheme
+            value: checkTheme(circleColors)
           },
           shape: {
             type: "circle",
             stroke: {
               width: 0,
-              color: !dark ? colors.lightTheme : colors.darkTheme
+              color: checkTheme(circleColors)
             },
             polygon: {
               nb_sides: 5
@@ -127,7 +136,7 @@ const ParticlesBackground: React.FC<Props> = ({dark}) => {
           line_linked: {
             enable: false,
             distance: 150,
-            color: !dark ? colors.darkTheme : colors.lightTheme,
+            color: checkTheme(circleColors),
             opacity: 0.4,
             width: 1
           },

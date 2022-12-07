@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import workPopupReducer from "./features/workPopup/workPopupSlice";
+import workPopupReducer from "./pages/Work/workPopupSlice";
+import themeReducer from "./components/Sidebar/themeSlice";
 
 export const store = configureStore({
     reducer: {
-        workPopup: workPopupReducer
+        workPopup: workPopupReducer,
+        theme: themeReducer
     }
 })
 

@@ -1,7 +1,6 @@
 import React from "react";
 import FoxSayImg from "./../../assets/foxsay-no-bg.png";
 import {Routes} from "../../utils/routes";
-import ParticlesBackground from "../../components/ParticlesBackground/ParticlesBackground";
 import { NavLink } from "react-router-dom";
 import {motion} from "framer-motion";
 import styles from "./Home.module.scss";
@@ -27,7 +26,6 @@ const Home: React.FC = () => {
       <NavLink className={styles.homeBtn} to={Routes.contact}>
           Contact me!
       </NavLink>
-      <ParticlesBackground dark={true} />
       <Loader />
     </motion.div>
   );
