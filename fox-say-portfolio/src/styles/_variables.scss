@@ -20,6 +20,8 @@
   --card-shadow: rgba(0, 0, 0, 0.1);
 
   --progress-bar-color: rgba(0, 0, 0, 0.1);
+
+  --input-color: #3f3f3f;
 }
 
 [theme-type=dark] {
@@ -42,4 +44,6 @@
   --card-shadow: rgba(255, 255, 255, 0.1);
 
   --progress-bar-color: rgba(255, 255, 255, 0.1);
+
+  --input-color: #f4f4f4;
 }
