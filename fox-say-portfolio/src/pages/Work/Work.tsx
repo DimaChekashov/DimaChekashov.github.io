@@ -7,15 +7,18 @@ import styles from "./Work.module.scss";
 
 const Work: React.FC = () => {
   return (
-    <motion.div 
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
-      exit={{opacity: 0}}
-    >
-      <WorkCardList />
-      <WorkPopup />
+    <>
+      <motion.div 
+        transition={{ delay: 1.5 }}
+        initial={{display: "none"}}
+        animate={{display: "block"}}
+        exit={{display: "none"}}
+      >
+        <WorkCardList />
+        <WorkPopup />
+      </motion.div>
       <Loader />
-    </motion.div>
+    </>
   );
 };
 
