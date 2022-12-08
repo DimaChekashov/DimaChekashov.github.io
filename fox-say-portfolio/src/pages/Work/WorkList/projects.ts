@@ -14,6 +14,8 @@ import TechnotronImg from "../../../assets/works/layouts/technotron.jpg";
 import Il16Img from "../../../assets/works/layouts/il16.jpg";
 import DostupMebelImg from "../../../assets/works/layouts/dostup-mebel.jpg";
 
+import NoImg from "../../../assets/icons/no-img.png";
+
 export interface Project {
   name: string;
   logoImgUrl: string;
@@ -38,7 +40,7 @@ const projects: Project[] = [
     name: "Mechanica", 
     logoImgUrl: "./assets/works/logos/mechanica.png", 
     layoutImgUrl: MechanicaImg,
-    theme: "secondary"
+    theme: "primary"
   },
   {
     name: "Mega Okna", 
@@ -50,13 +52,7 @@ const projects: Project[] = [
     name: "Okna", 
     logoImgUrl: "./assets/works/logos/okna.png", 
     layoutImgUrl: OknaImg,
-    theme: "secondary"
-  },
-  {
-    name: "Remdizel", 
-    logoImgUrl: "./assets/works/logos/remdizel.png", 
-    layoutImgUrl: RemdizelImg,
-    theme: "dark"
+    theme: "primary"
   },
   {
     name: "Spectehnika", 
@@ -65,28 +61,10 @@ const projects: Project[] = [
     theme: "white"
   },
   {
-    name: "Rk Metropol", 
-    logoImgUrl: "./assets/works/logos/rk-metropol.png", 
-    layoutImgUrl: RkMetropolImg,
+    name: "Remdizel", 
+    logoImgUrl: "./assets/works/logos/remdizel.png", 
+    layoutImgUrl: RemdizelImg,
     theme: "dark"
-  },
-  {
-    name: "Berk Group", 
-    logoImgUrl: "./assets/works/logos/berk-group.png", 
-    layoutImgUrl: BerkGroupImg,
-    theme: "white"
-  },
-  {
-    name: "Azimut", 
-    logoImgUrl: "./assets/works/logos/azimut.png", 
-    layoutImgUrl: AzimutImg,
-    theme: "white"
-  },
-  {
-    name: "Kamskaya Mekhanika", 
-    logoImgUrl: "./assets/works/logos/kamskaya-mekhanika.png", 
-    layoutImgUrl: KamskayaMekhanikaImg,
-    theme: "secondary"
   },
   {
     name: "TIS", 
@@ -95,22 +73,46 @@ const projects: Project[] = [
     theme: "white"
   },
   {
+    name: "Berk Group", 
+    logoImgUrl: "./assets/works/logos/berk-group.png", 
+    layoutImgUrl: BerkGroupImg,
+    theme: "white"
+  },
+  {
+    name: "Kamskaya Mekhanika", 
+    logoImgUrl: "./assets/works/logos/kamskaya-mekhanika.png", 
+    layoutImgUrl: KamskayaMekhanikaImg,
+    theme: "primary"
+  },
+  {
+    name: "Azimut", 
+    logoImgUrl: "./assets/works/logos/azimut.png", 
+    layoutImgUrl: AzimutImg,
+    theme: "white"
+  },
+  {
+    name: "Rk Metropol", 
+    logoImgUrl: NoImg, 
+    layoutImgUrl: RkMetropolImg,
+    theme: "primary"
+  },
+  {
     name: "Technotron", 
     logoImgUrl: "./assets/works/logos/technotron.svg", 
     layoutImgUrl: TechnotronImg,
     theme: "dark"
   },
   {
-    name: "il16", 
-    logoImgUrl: "./assets/works/logos/il16.png", 
-    layoutImgUrl: Il16Img,
-    theme: "secondary"
-  },
-  {
     name: "Dostup Mebel", 
     logoImgUrl: "./assets/works/logos/dostup-mebel.png", 
     layoutImgUrl: DostupMebelImg,
     theme: "white"
+  },
+  {
+    name: "il16", 
+    logoImgUrl: "./assets/works/logos/il16.png", 
+    layoutImgUrl: Il16Img,
+    theme: "primary"
   }
 ];
 
