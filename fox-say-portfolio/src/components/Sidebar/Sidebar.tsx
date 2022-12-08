@@ -2,12 +2,11 @@ import React from "react";
 import FoxSayLogo from "./../../assets/foxsay-logo.svg";
 import {NavLink} from "react-router-dom";
 import {Routes} from "../../utils/routes";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { toggleTheme } from "./themeSlice";
 import styles from "./Sidebar.module.scss";
-import { changeTheme, theme } from "./themeSlice";
 
 const Sidebar: React.FC = () => {
-  const themeStatus = useSelector(theme.status);
   const dispatch = useDispatch();
 
   return (
@@ -80,7 +79,7 @@ const Sidebar: React.FC = () => {
         type="button" 
         className={styles.lightSwitch}
         onClick={() => {
-          dispatch(changeTheme(themeStatus === "light" ? "dark" : "light"));
+          dispatch(toggleTheme());
         }}
       >
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114.1 122.88">

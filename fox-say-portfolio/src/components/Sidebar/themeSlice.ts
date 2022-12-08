@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
 
 type Theme = "light" | "dark";
@@ -16,14 +15,16 @@ export const themeSlice = createSlice({
   name: 'workPopup',
   initialState,
   reducers: {
-    changeTheme: (state, {payload}: PayloadAction<Theme>) => {
-      state.themeStatus = payload;
-      localStorage.setItem("theme", payload);
+    toggleTheme: (state) => {
+      const getDifferentTheme: Theme = state.themeStatus === "light" ? "dark" : "light";
+
+      state.themeStatus = getDifferentTheme;
+      localStorage.setItem("theme", getDifferentTheme);
     }
   },
 })
 
-export const { changeTheme } = themeSlice.actions;
+export const { toggleTheme } = themeSlice.actions;
 
 export const theme = {
   status: ({theme}: RootState) => theme.themeStatus,
