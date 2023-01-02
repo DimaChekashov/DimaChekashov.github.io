@@ -33,3 +33,14 @@
     }
   }
 }
+
+@media screen and (min-width: 800px) and (max-width: 970px) {
+  .about {
+    &Title {
+      font-size: 35px;
+    }
+    &Block {
+      max-width: 100%;
+    }
+  }
+}

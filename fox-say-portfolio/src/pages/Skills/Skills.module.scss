@@ -95,5 +95,55 @@
   }
 }
 
-.technology {
+@media screen and (min-width: 800px) and (max-width: 1140px) {
+  .skills {
+    &Title {
+      font-size: 35px;
+    }
+    &Subtitle {
+      font-size: 18px;
+    }
+    &Grid {
+      gap: 15px;
+      grid-template-columns: repeat(3, 200px);
+    }
+    &Item {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  .companies {
+    gap: 30px;
+  }
+
+  .company {
+    padding: 20px 15px 25px;
+    &::after {
+      width: 15px;
+      right: -22.5px;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 970px) {
+  .skills {
+    &Grid {
+      grid-template-columns: repeat(3, 170px);
+    }
+    &Item {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  .companies {
+    grid-template-columns: 1fr;
+  }
+
+  .company {
+    &::after {
+      display: none;
+    }
+  }
 }
