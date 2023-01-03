@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.634c5f03.css",
+    "main.js": "/static/js/main.84b254ed.js",
+    "static/media/kamskaya-mekhanika.jpg": "/static/media/kamskaya-mekhanika.50b58ab3dac0cc353a7e.jpg",
+    "static/media/azimut.jpg": "/static/media/azimut.342e90218b531a4599d9.jpg",
+    "static/media/remdizel.jpg": "/static/media/remdizel.a0f16eb0dbdec7247289.jpg",
+    "static/media/mega-okna.jpg": "/static/media/mega-okna.7f15445e09ef963479de.jpg",
+    "static/media/okna.jpg": "/static/media/okna.8874ac38092e9e40b00f.jpg",
+    "static/media/artsvarka.jpg": "/static/media/artsvarka.72c16c7893369a7dce1f.jpg",
+    "static/media/rk-metropol.jpg": "/static/media/rk-metropol.b709d87ef319d69a11c6.jpg",
+    "static/media/berk-group.jpg": "/static/media/berk-group.10fb8c5e88c42fafc620.jpg",
+    "static/media/foxsay-no-bg.png": "/static/media/foxsay-no-bg.d2cc0d32ea2204a9dc54.png",
+    "static/media/mechanica.jpg": "/static/media/mechanica.a43324a1709eb2b4960a.jpg",
+    "static/media/technotron.jpg": "/static/media/technotron.7d50c37af30a584da6b7.jpg",
+    "static/media/il16.jpg": "/static/media/il16.7c312d3d77a25ce33c61.jpg",
+    "static/media/dostup-mebel.jpg": "/static/media/dostup-mebel.17e046e904a27ae46aa3.jpg",
+    "static/media/avtorost.jpg": "/static/media/avtorost.024f72a932f16f7ca620.jpg",
+    "static/media/spectehnika.jpg": "/static/media/spectehnika.5cbdd3b8c75f99a8b6eb.jpg",
+    "static/media/tis.jpg": "/static/media/tis.5a07028ccea4c8d619f0.jpg",
+    "static/media/foxsay-logo.svg": "/static/media/foxsay-logo.ea925f7084cc8ffbb5268491a92c2fd1.svg",
+    "static/media/sass-original.svg": "/static/media/sass-original.fb123914eb0e5cc6e0a65e2928d89e2a.svg",
+    "static/media/react-original.svg": "/static/media/react-original.7c8375868df8c536ab4f2d4078519904.svg",
+    "static/media/gulp-plain.svg": "/static/media/gulp-plain.5bbb8bba492611dd935fb462dfb32f68.svg",
+    "static/media/bootstrap-original.svg": "/static/media/bootstrap-original.9d52c09ec3d831cca7244e06743aed7d.svg",
+    "static/media/redux-original.svg": "/static/media/redux-original.7fe607aacc31f6e6199e70f16aae407e.svg",
+    "static/media/javascript-original.svg": "/static/media/javascript-original.4c1b5332c1b1057928f6f06cf972c91c.svg",
+    "static/media/typescript-original.svg": "/static/media/typescript-original.8d9549db1a0f5d73a35aa5dab48a09f9.svg",
+    "static/media/css3-original.svg": "/static/media/css3-original.39769a8bd378bf410d6b381a8d88fa35.svg",
+    "static/media/git-original.svg": "/static/media/git-original.c08353563539c6459b353f29d8dd7bf2.svg",
+    "index.html": "/index.html",
+    "static/media/html5-original.svg": "/static/media/html5-original.8664168d5bc90b1a24396f85aadbf623.svg",
+    "main.634c5f03.css.map": "/static/css/main.634c5f03.css.map",
+    "main.84b254ed.js.map": "/static/js/main.84b254ed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.634c5f03.css",
+    "static/js/main.84b254ed.js"
+  ]
+}
