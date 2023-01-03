@@ -147,3 +147,32 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .skills {
+    &Title {
+      font-size: 30px;
+    }
+    &Grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    &Items {
+      margin-bottom: 0;
+    }
+  }
+
+  .companies {
+    grid-template-columns: 1fr;
+  }
+  .company {
+    &::after {
+      top: auto;
+      bottom: -42.5px;
+      right: calc(50% - 1px);
+      width: 2px;
+      height: 35px;
+    }
+  }
+}

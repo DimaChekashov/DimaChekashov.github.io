@@ -52,3 +52,22 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .contact {
+    &Title {
+      font-size: 30px;
+    }
+    &Link {
+      height: 150px;
+      padding: 20px 15px;
+      &Title {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+    &Links {
+      flex-direction: column;
+    }
+  }
+}

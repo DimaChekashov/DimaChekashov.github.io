@@ -44,3 +44,15 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .about {
+      &Title {
+        font-size: 30px;
+      }
+  
+      &Block {
+        max-width: 100%;
+      }
+    }
+}

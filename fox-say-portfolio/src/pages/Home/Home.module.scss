@@ -54,6 +54,18 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
-    
+@media screen and (max-width: 500px) {
+    .home {
+        &Title {
+            font-size: 30px;
+        }
+        &Subtitle {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        &Avatar {
+            width: 250px;
+            height: 250px;
+        }
+    }
 }
