@@ -111,3 +111,74 @@
     outline: none;
   }
 }
+
+.menuBtn {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .sidebar {
+    width: 100%;
+    transform: translate(100%);
+    transition: transform 0.5s ease-in;
+    &.active {
+      transform: translate(0);
+    }
+  }
+
+  .menuBtn {
+    background-color: transparent;
+    position: relative;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    &Bar,
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 2px;
+      background-color: var(--font-color);
+      position: absolute;
+      z-index: 1;
+      left: 0;
+    }
+    &Bar {
+      top: 14px;
+      transition: top 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    &::after {
+      top: 4px;
+      transition: top 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    &::before {
+      bottom: 4px;
+      transition: bottom 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    &:focus {
+      outline: none;
+    }
+    &.active {
+      .menuBtnBar {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(45deg);
+        top: 14px;
+      }
+      &::before {
+        transform: rotate(-45deg);
+        bottom: 14px;
+      }
+    }
+  }
+}
