@@ -1,7 +1,11 @@
 import Link from "next/link";
 import React from "react";
 
-const linkClass = "hover:text-blue-500";
+const links = [
+    {href: "/", label: "Home"},
+    {href: "/blog", label: "Blog"},
+    {href: "/portfolio", label: "Portfolio"}
+];
 
 const Header: React.FC = () => {
     return (
@@ -9,9 +13,9 @@ const Header: React.FC = () => {
             <div>Fox Say Logo</div>
             <nav>
                 <ul className="flex gap-4">
-                    <li><Link href="/" className={linkClass}>Home</Link></li>
-                    <li><Link href="/blog" className={linkClass}>Blog</Link></li>
-                    <li><Link href="/portfolio" className={linkClass}>Portfolio</Link></li>
+                    {links.map(({href, label}) => (
+                        <li key={href}><Link href={href} className="hover:text-blue-500">{label}</Link></li>
+                    ))}
                 </ul>
             </nav>
         </header>
