@@ -2,10 +2,10 @@ import Link from "next/link";
 import React from "react";
 import { links } from "../model/consts";
 
-export const Header: React.FC = () => {
+export const AdminHeader: React.FC = () => {
   return (
     <header className="mb-10 flex justify-between p-4 border-b border-gray-200">
-      <div>Fox Say Logo</div>
+      <div>Fox Say Admin Panel</div>
       <nav>
         <ul className="flex gap-4">
           {links.map(({ href, label }) => (

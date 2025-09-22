@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import AdminHeader from "@/widgets/admin-header";
 
 import "../styles/globals.css";
 
@@ -20,7 +21,12 @@ export function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} antialiased`}>{children}</body>
+      <body className={`${roboto.variable} antialiased`}>
+        <div className="container mx-auto min-h-screen flex flex-col">
+          <AdminHeader />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

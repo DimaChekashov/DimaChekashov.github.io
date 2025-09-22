@@ -1,3 +1,1 @@
-export default function Admin() {
-  return <div>Admin panel</div>;
-}
+export { default } from "@/pages/admin-panel";
