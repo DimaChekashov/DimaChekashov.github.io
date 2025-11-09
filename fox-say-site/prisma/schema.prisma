@@ -11,9 +11,9 @@ model User {
   id            Int      @id @default(autoincrement())
   username      String   @unique
   email         String   @unique
-  password_hash String
-  display_name  String?
-  avatar_url    String?
+  passwordHash  String
+  displayName   String?
+  avatarUrl     String?
   bio           String?  @db.Text
   role          Role     @default(USER)
   isActive      Boolean  @default(true)
@@ -21,7 +21,91 @@ model User {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
-  @@map("Users")
+  @@map("users")
+}
+
+model Category {
+ id          Int            @id @default(autoincrement())
+ name        String 
+ slug        String         @unique
+ description String?
+ parentId    Int?
+ parent      Category?      @relation("CategoryToCategory", fields: [parentId], references: [id])
+ children    Category[]     @relation("CategoryToCategory")
+ posts       PostCategory[] 
+ createdAt   DateTime       @default(now())
+
+ @@map("categories")
+}
+
+model Post {
+ id            Int            @id @default(autoincrement())
+ title         String
+ slug          String         @unique
+ content       String
+ excerpt       String?
+ featuredImage String?
+ authorId      Int 
+ author        User           @relation(fields: [authorId], references: [id])
+ status        PostStatus     @default(DRAFT)
+ commentStatus Boolean        @default(true)
+ publishedAt   DateTime?
+ categories    PostCategory[] 
+ createdAt     DateTime       @default(now())
+ updatedAt     DateTime       @updatedAt
+
+ @@map("posts")
+}
+
+model PostCategory {
+ postId     Int 
+ categoryId Int
+ post       Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+ Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+ @@id([postId, categoryId])
+ @@map("post_categories")
+}
+
+model Tag {
+ id
+ name
+ slug
+ createdAt DateTime
+
+ @@map("Tags")
+}
+
+model PostTag {
+ postId
+ tagId
+
+ @@map("PostTags")
+}
+
+model Comment {
+ id
+ content
+ postId
+ userId
+ parentId
+ status
+ createdAt DateTime
+ updatedAt DateTime
+
+ @@map("Comments")
+}
+
+enum CommnetStatus {
+ APPROVED
+ PENDING
+ SPAM
+}
+
+enum PostStatus {
+ PUBLISHED
+ DRAFT
+ ARCHIVED
 }
 
 enum Role {
