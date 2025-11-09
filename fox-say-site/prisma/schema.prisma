@@ -51,6 +51,7 @@ model Post {
  commentStatus Boolean        @default(true)
  publishedAt   DateTime?
  categories    PostCategory[] 
+ tags          PostTag[]
  createdAt     DateTime       @default(now())
  updatedAt     DateTime       @updatedAt
 
@@ -59,47 +60,56 @@ model Post {
 
 model PostCategory {
  postId     Int 
- categoryId Int
+ сategoryId Int
  post       Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
- Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+ сategory   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 
  @@id([postId, categoryId])
  @@map("post_categories")
 }
 
 model Tag {
- id
- name
- slug
- createdAt DateTime
+ id        Int       @id @default(autoincrement())
+ name      String
+ slug      String    @unique
+ posts     PostTag[]
+ createdAt DateTime  @default(now())
 
- @@map("Tags")
+ @@map("tags")
 }
 
 model PostTag {
- postId
- tagId
+ postId Int
+ tagId  Int
+ post   Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+ tag    Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
 
- @@map("PostTags")
+ @@id([postId, tagId])
+ @@map("post_tags")
 }
 
 model Comment {
- id
- content
- postId
- userId
- parentId
- status
- createdAt DateTime
- updatedAt DateTime
+ id        Int           @id @default(autoincrement())
+ content   String
+ postId    Int
+ post      Post          @relation(fields: [postId], references: [id])
+ userId    Int
+ user      User          @relation(fields: [userId], references: [id])
+ parentId  Int?
+ parent    Comment?      @relation("CommentToComment", fields: [parentId], references: [id])
+ children  Comment[]     @relation("CommentToComment")
+ status    CommentStatus @default(PENDING)
+ createdAt DateTime      @default(now())
+ updatedAt DateTime      @updatedAt
 
- @@map("Comments")
+ @@map("comments")
 }
 
-enum CommnetStatus {
+enum CommentStatus {
  APPROVED
  PENDING
  SPAM
+ DELETED
 }
 
 enum PostStatus {
@@ -111,4 +121,5 @@ enum PostStatus {
 enum Role {
  USER
  ADMIN
+ MODERATOR
 }
