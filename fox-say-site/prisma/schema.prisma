@@ -8,20 +8,21 @@ datasource db {
 }
 
 model User {
-  id            Int      @id @default(autoincrement())
-  username      String   @unique
-  email         String   @unique
-  passwordHash  String
-  displayName   String?
-  avatarUrl     String?
-  bio           String?  @db.Text
-  role          Role     @default(USER)
-  isActive      Boolean  @default(true)
-  posts         Post[]
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+ id            Int      @id @default(autoincrement())
+ username      String   @unique
+ email         String   @unique
+ passwordHash  String
+ displayName   String?
+ avatarUrl     String?
+ bio           String?  @db.Text
+ role          Role     @default(USER)
+ isActive      Boolean  @default(true)
+ posts         Post[]
+ comments      Comment[]
+ createdAt     DateTime @default(now())
+ updatedAt     DateTime @updatedAt
 
-  @@map("users")
+ @@map("users")
 }
 
 model Category {
@@ -52,6 +53,7 @@ model Post {
  publishedAt   DateTime?
  categories    PostCategory[] 
  tags          PostTag[]
+ comments      Comment[]
  createdAt     DateTime       @default(now())
  updatedAt     DateTime       @updatedAt
 
@@ -60,9 +62,9 @@ model Post {
 
 model PostCategory {
  postId     Int 
- сategoryId Int
+ categoryId Int
  post       Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
- сategory   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+ category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 
  @@id([postId, categoryId])
  @@map("post_categories")
