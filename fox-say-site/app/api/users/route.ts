@@ -56,7 +56,13 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     console.log("Error creating user:", error);
-    return NextResponse.json({ error: "Server Error!" }, { status: 500 });
+    return NextResponse.json(
+      {
+        success: false,
+        error: "Server Error!",
+      },
+      { status: 500 }
+    );
   }
 }
 
