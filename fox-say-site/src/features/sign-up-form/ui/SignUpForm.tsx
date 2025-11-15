@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Button } from "@/shared/ui/Button/Button";
 import { InputField } from "@/shared/ui/InputField";
 import { createUser } from "../api/createUser";
@@ -15,6 +16,7 @@ type Fields = {
 };
 
 export const SignUpForm = () => {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -30,7 +32,7 @@ export const SignUpForm = () => {
 
     createUser(data)
       .then((response) => {
-        console.log("User created successfully:", response);
+        router.push(`/profile/${response.user.id}`);
       })
       .catch((error) => {
         setError(error.message || "An error occurred");

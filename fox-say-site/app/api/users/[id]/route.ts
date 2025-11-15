@@ -1,23 +1,23 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prismaClient } from "../../../../lib/prisma/prismaClient";
 
-export async function GET(request: NextRequest) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   try {
-    const { searchParams } = new URL(request.url);
-    const userId = searchParams.get("userId");
+    const { id } = params;
 
-    if (!userId) {
+    if (!id) {
       return NextResponse.json(
-        {
-          message: "User id is required!",
-        },
+        { message: "User id is required!" },
         { status: 400 }
       );
     }
 
     const user = await prismaClient.user.findFirst({
       where: {
-        id: userId,
+        id: parseInt(id),
       },
       omit: {
         passwordHash: true,
@@ -50,16 +50,16 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function PUT(request: NextRequest) {
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   try {
-    const { searchParams } = new URL(request.url);
-    const userId = searchParams.get("userId");
+    const { id } = params;
 
-    if (!userId) {
+    if (!id) {
       return NextResponse.json(
-        {
-          message: "User id is required!",
-        },
+        { message: "User id is required!" },
         { status: 400 }
       );
     }
@@ -75,23 +75,23 @@ export async function PUT(request: NextRequest) {
   }
 }
 
-export async function DELETE(request: NextRequest) {
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   try {
-    const { searchParams } = new URL(request.url);
-    const userId = searchParams.get("userId");
+    const { id } = params;
 
-    if (!userId) {
+    if (!id) {
       return NextResponse.json(
-        {
-          message: "User id is required!",
-        },
+        { message: "User id is required!" },
         { status: 400 }
       );
     }
 
     const existingUser = await prismaClient.user.findUnique({
       where: {
-        id: userId,
+        id: parseInt(id),
       },
     });
 
@@ -104,7 +104,7 @@ export async function DELETE(request: NextRequest) {
 
     const user = await prismaClient.user.delete({
       where: {
-        id: userId,
+        id: parseInt(id),
       },
       omit: {
         passwordHash: true,
