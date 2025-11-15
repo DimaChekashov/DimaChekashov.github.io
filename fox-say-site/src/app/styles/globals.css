@@ -41,8 +41,20 @@
     background-color: var(--bg-secondary);
   }
 
-  .bg-primary-blue {
+  .bg-primary-blue,
+  .hover\:bg-primary-blue:hover {
     background-color: var(--primary-blue);
+  }
+
+  .bg-primary-dark-blue,
+  .hover\:bg-primary-dark-blue:hover {
+    background-color: var(--primary-dark-blue);
+  }
+
+  .bg-primary-darker-blue,
+  .hover\:bg-primary-darker-blue:hover,
+  .active\:bg-primary-darker-blue:active {
+    background-color: var(--primary-darker-blue);
   }
 
   .text-primary-blue {

@@ -11,9 +11,11 @@
   "dependencies": {
     "@prisma/client": "^6.19.0",
     "bcrypt": "^6.0.0",
+    "classnames": "^2.5.1",
     "next": "15.2.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.66.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
