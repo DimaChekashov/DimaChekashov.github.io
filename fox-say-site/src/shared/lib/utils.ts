@@ -1,3 +1,5 @@
+import { headers } from "next/headers";
+
 export const formatDate = (dateString: string) => {
   const date = new Date(dateString);
 
@@ -9,3 +11,11 @@ export const formatDate = (dateString: string) => {
 
   return `${day}.${month}.${year} - ${hours}:${minutes}`;
 };
+
+export async function getCurrentDomain() {
+  const headersList = await headers();
+  const host = headersList.get("host");
+  const protocol = headersList.get("x-forwarded-proto") || "http";
+
+  return `${protocol}://${host}`;
+}

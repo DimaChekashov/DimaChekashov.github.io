@@ -1,4 +1,4 @@
-import { formatDate } from "@/shared/lib/utils";
+import { formatDate, getCurrentDomain } from "@/shared/lib/utils";
 import { notFound } from "next/navigation";
 
 interface ProfilePageProps {
@@ -9,12 +9,8 @@ interface ProfilePageProps {
 
 export default async function ProfilePage({ params }: ProfilePageProps) {
   const { id } = await params;
-  const baseUrl =
-    process.env.NODE_ENV === "production"
-      ? "https://yourdomain.com"
-      : "http://localhost:3000";
 
-  const response = await fetch(`${baseUrl}/api/users/${id}`, {
+  const response = await fetch(`${getCurrentDomain()}/api/users/${id}`, {
     cache: "no-cache",
   });
 
