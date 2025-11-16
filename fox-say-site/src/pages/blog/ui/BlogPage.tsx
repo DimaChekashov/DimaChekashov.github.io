@@ -1,7 +1,7 @@
 import { getPosts } from "@/shared/api/getPosts";
-import { ROUTES } from "@/shared/lib/contsts";
-import Link from "next/link";
+import { IPost } from "@/shared/lib/types";
 import { notFound } from "next/navigation";
+import { PostItem } from "./PostItem";
 
 export default async function Blog() {
   const posts = await getPosts();
@@ -11,11 +11,9 @@ export default async function Blog() {
   }
 
   return (
-    <div>
-      {posts.data.map((post) => (
-        <Link key={post.id} href={`${ROUTES.BLOG}/${post.id}`}>
-          {post.title}
-        </Link>
+    <div className="grid grid-cols-3 gap-6">
+      {posts.data.map((post: IPost) => (
+        <PostItem key={post.id} post={post} />
       ))}
     </div>
   );

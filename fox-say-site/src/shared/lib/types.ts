@@ -32,8 +32,8 @@ export interface IUser {
   bio: string;
   role: Role;
   isActive: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface IPost {
@@ -46,12 +46,12 @@ export interface IPost {
   authorId: number;
   status: PostStatus;
   commentStatus: boolean;
-  publishedAt: Date;
+  publishedAt: string;
   categories: ICategory[];
   tags: ITag[];
   comments: Comment[];
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface ICategory {
@@ -63,7 +63,7 @@ export interface ICategory {
   parent: ICategory;
   children: ICategory[];
   posts: IPost[];
-  createdAt: Date;
+  createdAt: string;
 }
 
 export interface ITag {
@@ -71,7 +71,7 @@ export interface ITag {
   name: string;
   slug: string;
   posts: ITag[];
-  createdAt: Date;
+  createdAt: string;
 }
 
 export interface IComment {
@@ -85,6 +85,6 @@ export interface IComment {
   parent: IComment;
   children: IComment[];
   status: CommentStatus;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }

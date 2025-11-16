@@ -57,7 +57,8 @@
     background-color: var(--primary-darker-blue);
   }
 
-  .text-primary-blue {
+  .text-primary-blue,
+  .hover\:text-primary-blue:hover {
     color: var(--primary-blue);
   }
 
@@ -138,9 +139,4 @@ h5 {
 }
 h6 {
   font-size: 1.125rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
 }
