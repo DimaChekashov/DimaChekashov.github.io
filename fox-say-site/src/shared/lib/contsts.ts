@@ -5,6 +5,7 @@ export const ROUTES = {
   PROJECTS: "/projects",
   CONTACT: "/contact",
   BLOG: "/blog",
+  ADMIN: "/admin",
 } as const;
 
 export const CURRENT_YEAR = new Date().getFullYear();

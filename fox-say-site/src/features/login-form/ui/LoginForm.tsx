@@ -3,10 +3,11 @@
 import { useRouter } from "next/navigation";
 import { Button } from "@/shared/ui/Button/Button";
 import { InputField } from "@/shared/ui/InputField";
-import { createUser } from "../api/createUser";
+import { login } from "../api/login";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { SIGN_UP_FIELDS } from "../model/consts";
+import { LOGIN_FIELDS } from "../model/consts";
 import { useState } from "react";
+import { ROUTES } from "@/shared/lib/contsts";
 
 type Fields = {
   username: string;
@@ -15,7 +16,7 @@ type Fields = {
   password: string;
 };
 
-export const SignUpForm = () => {
+export const LoginForm = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -26,20 +27,21 @@ export const SignUpForm = () => {
     formState: { errors },
   } = useForm<Fields>();
 
-  const onSubmit: SubmitHandler<Fields> = (data) => {
+  const onSubmit: SubmitHandler<Fields> = async (data) => {
     setLoading(true);
     setError(null);
 
-    createUser(data)
-      .then((response) => {
-        router.push(`/profile/${response.user.id}`);
-      })
-      .catch((error) => {
-        setError(error.message || "An error occurred");
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    try {
+      const response = await login(data);
+
+      setTimeout(() => {
+        router.push(ROUTES.ADMIN);
+      }, 300);
+    } catch (error: any) {
+      setError(error.message || "An error occurred");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -48,8 +50,8 @@ export const SignUpForm = () => {
       onSubmit={handleSubmit(onSubmit)}
     >
       <InputField
-        {...register(SIGN_UP_FIELDS.USERNAME, { required: true })}
-        error={errors[SIGN_UP_FIELDS.USERNAME]?.message}
+        {...register(LOGIN_FIELDS.USERNAME, { required: true })}
+        error={errors[LOGIN_FIELDS.USERNAME]?.message}
         id="username"
         label="Username"
         type="text"
@@ -57,24 +59,8 @@ export const SignUpForm = () => {
         required
       />
       <InputField
-        {...register(SIGN_UP_FIELDS.DISPLAY_NAME)}
-        id="displayName"
-        label="DisplayName"
-        type="text"
-        placeholder="Fox Say"
-      />
-      <InputField
-        {...register(SIGN_UP_FIELDS.EMAIL, { required: true })}
-        error={errors[SIGN_UP_FIELDS.EMAIL]?.message}
-        id="email"
-        label="Email"
-        type="email"
-        placeholder="foxsay@example.com"
-        required
-      />
-      <InputField
-        {...register(SIGN_UP_FIELDS.PASSWORD, { required: true })}
-        error={errors[SIGN_UP_FIELDS.PASSWORD]?.message}
+        {...register(LOGIN_FIELDS.PASSWORD, { required: true })}
+        error={errors[LOGIN_FIELDS.PASSWORD]?.message}
         id="password"
         label="Password"
         type="password"
@@ -82,7 +68,7 @@ export const SignUpForm = () => {
         required
       />
       <Button type="submit" disabled={loading}>
-        Sign Up
+        Login
       </Button>
       {error && <span className="text-red-500">{error}</span>}
     </form>

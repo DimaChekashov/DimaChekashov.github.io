@@ -1,22 +1,18 @@
 import { IUser } from "@/shared/lib/types";
 
-export const createUser = async ({
+export const login = async ({
   username,
-  email,
   password,
-  displayName,
-}: Pick<IUser, "username" | "email" | "password" | "displayName">) => {
+}: Pick<IUser, "username" | "password">) => {
   try {
-    const response = await fetch("/api/users", {
+    const response = await fetch("/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         username,
-        email,
         password,
-        displayName,
       }),
     });
 
@@ -28,9 +24,17 @@ export const createUser = async ({
       );
     }
 
+    if (data.token) {
+      localStorage.setItem("authToken", data.token);
+    }
+
+    if (data.user) {
+      localStorage.setItem("user", JSON.stringify(data.user));
+    }
+
     return data;
   } catch (error) {
-    console.error(error);
+    console.error("Login error:", error);
 
     throw error;
   }
