@@ -1,4 +1,5 @@
 import { getPost } from "@/shared/api/getPost";
+import { formatDate } from "@/shared/lib/utils";
 import { notFound } from "next/navigation";
 
 interface PostPageProps {
@@ -16,11 +17,20 @@ export default async function PostPage({ params }: PostPageProps) {
     return notFound();
   }
 
-  const { title } = post.data;
+  const { title, content, featuredImage, createdAt } = post.data;
 
   return (
     <div>
-      <h1>{title}</h1>
+      {featuredImage && (
+        <img
+          src={featuredImage}
+          alt={title}
+          className="w-full max-h-[400px] object-center object-fill"
+        />
+      )}
+      {formatDate(createdAt)}
+      <h1 className="mb-4">{title}</h1>
+      <p>{content}</p>
     </div>
   );
 }
