@@ -1,8 +1,19 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import { links } from "../model/consts";
+import { usePathname } from "next/navigation";
+import classNames from "classnames";
 
 export const Header: React.FC = () => {
+  const pathname = usePathname();
+
+  const segments = pathname
+    ? pathname.split("/").filter((segment) => segment !== "")
+    : [];
+  const firstSegment = segments[0] || "";
+
   return (
     <header className="mb-10 flex justify-between p-4 border-b border-gray-200">
       <div>Fox Say Logo</div>
@@ -10,7 +21,13 @@ export const Header: React.FC = () => {
         <ul className="flex gap-4">
           {links.map(({ href, label }) => (
             <li key={href}>
-              <Link href={href} className="hover:text-blue-500">
+              <Link
+                href={href}
+                className={classNames(
+                  "hover:text-blue-500",
+                  `/${firstSegment}` === href && "text-blue-500"
+                )}
+              >
                 {label}
               </Link>
             </li>
