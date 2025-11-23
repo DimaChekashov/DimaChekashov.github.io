@@ -5,9 +5,11 @@ import React from "react";
 import { links } from "../model/consts";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
+import { useTranslations } from "next-intl";
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
+  const t = useTranslations("Header");
 
   const segments = pathname
     ? pathname.split("/").filter((segment) => segment !== "")
@@ -28,7 +30,7 @@ export const Header: React.FC = () => {
                   `/${firstSegment}` === href && "text-blue-500"
                 )}
               >
-                {label}
+                {t(`Navbar.${label}`)}
               </Link>
             </li>
           ))}

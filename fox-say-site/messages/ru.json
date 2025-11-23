@@ -1,4 +1,25 @@
 {
+  "Metadata": {
+    "siteName": "FoxSay",
+    "defaultTitle": "FoxSay | Портфолио",
+    "defaultDescription": "Я Software Engineer. Создаю веб-приложения на React, Next.js, TypeScript. Также разрабатываю на Node.js, Python и Go.",
+    "home": {
+      "title": "FoxSay | Главная"
+    },
+    "about": {
+      "title": "FoxSay | Обо мне"
+    }
+  },
+  "Header": {
+    "Navbar": {
+      "home": "Главная",
+      "about": "Обо мне",
+      "experience": "Опыт",
+      "projects": "Проекты",
+      "contact": "Контакты",
+      "blog": "Блог"
+    }
+  },
   "HomePage": {
     "title": "Привет мир!"
   }
