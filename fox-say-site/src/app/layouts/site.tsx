@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Header from "@/widgets/header";
 import Footer from "@/widgets/footer";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { routing } from "../i18n/routing";
+import { notFound } from "next/navigation";
 
 import "../styles/globals.css";
 
@@ -15,20 +18,33 @@ export const metadata: Metadata = {
   description: "Foxsay website description",
 };
 
-export function RootLayout({
-  children,
-}: Readonly<{
+interface Props {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }>;
+}
+
+export async function RootLayout({ children, params }: Readonly<Props>) {
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${roboto.variable} antialiased`}>
-        <div className="container mx-auto min-h-screen flex flex-col">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <NextIntlClientProvider>
+          <div className="container mx-auto min-h-screen flex flex-col">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
+}
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
