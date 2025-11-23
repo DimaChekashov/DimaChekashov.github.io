@@ -22,5 +22,8 @@
   },
   "HomePage": {
     "title": "Hello world!"
+  },
+  "Footer": {
+    "allRightsReserved": "All rights reserved"
   }
 }

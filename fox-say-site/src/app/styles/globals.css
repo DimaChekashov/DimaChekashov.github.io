@@ -58,7 +58,8 @@
   }
 
   .text-primary-blue,
-  .hover\:text-primary-blue:hover {
+  .hover\:text-primary-blue:hover,
+  .disabled\:text-primary-blue:disabled {
     color: var(--primary-blue);
   }
 

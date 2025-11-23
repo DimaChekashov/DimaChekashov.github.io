@@ -14,7 +14,7 @@ export const Header: React.FC = () => {
   const segments = pathname
     ? pathname.split("/").filter((segment) => segment !== "")
     : [];
-  const firstSegment = segments[0] || "";
+  const firstSegment = segments[1] || "";
 
   return (
     <header className="mb-10 flex justify-between p-4 border-b border-gray-200">

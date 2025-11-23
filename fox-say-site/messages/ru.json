@@ -22,5 +22,8 @@
   },
   "HomePage": {
     "title": "Привет мир!"
+  },
+  "Footer": {
+    "allRightsReserved": "Все права защищены"
   }
 }
