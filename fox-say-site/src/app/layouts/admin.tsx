@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
 import "../styles/globals.css";
+import { AuthGuard } from "@/shared/ui/AuthGuard/AuthGuard";
+import { AuthProvider } from "../providers/Auth/provider";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -20,9 +22,11 @@ export function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} antialiased`}>
-        <div className="container mx-auto min-h-screen flex flex-col">
-          {children}
-        </div>
+        <AuthProvider>
+          <div className="container mx-auto min-h-screen flex flex-col">
+            <AuthGuard>{children}</AuthGuard>
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -3,20 +3,19 @@
 import { useRouter } from "next/navigation";
 import { Button } from "@/shared/ui/Button/Button";
 import { InputField } from "@/shared/ui/InputField";
-import { login } from "../api/login";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { LOGIN_FIELDS } from "../model/consts";
 import { useState } from "react";
 import { ROUTES } from "@/shared/lib/contsts";
+import { useAuth } from "@/app/providers/Auth/provider";
 
 type Fields = {
   username: string;
-  displayName: string;
-  email: string;
   password: string;
 };
 
 export const LoginForm = () => {
+  const { login } = useAuth();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -31,15 +30,12 @@ export const LoginForm = () => {
     setLoading(true);
     setError(null);
 
-    try {
-      const response = await login(data);
+    const success = await login(data.username, data.password);
 
-      setTimeout(() => {
-        router.push(ROUTES.ADMIN);
-      }, 300);
-    } catch (error: any) {
-      setError(error.message || "An error occurred");
-    } finally {
+    if (success) {
+      router.push(ROUTES.ADMIN);
+    } else {
+      setError("Invalid username or password");
       setLoading(false);
     }
   };
