@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
       <nav
         className={classNames(
           "bg-background fixed top-0 left-0 w-screen h-screen px-6 py-20 flex transition-all md:static md:p-0 md:w-auto md:h-auto md:items-center",
-          isOpenMenu ? "translate-x-0" : "translate-x-full",
+          isOpenMenu ? "max-md:translate-x-0" : "max-md:translate-x-full",
         )}
       >
         <ul className="flex flex-col gap-4 md:flex-row">

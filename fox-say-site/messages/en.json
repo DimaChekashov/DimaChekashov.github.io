@@ -21,7 +21,11 @@
     }
   },
   "HomePage": {
-    "title": "Hello world!"
+    "title": "Hi, I'm Dmitry Chekashov!",
+    "subtitle": "developer",
+    "description": "I develop beautiful interfaces and high-performance systems",
+    "contactButton": "Contact me",
+    "projectsButton": "View projects"
   },
   "Footer": {
     "allRightsReserved": "All rights reserved"

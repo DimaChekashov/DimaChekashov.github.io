@@ -21,7 +21,11 @@
     }
   },
   "HomePage": {
-    "title": "Hallo Welt!"
+    "title": "Hallo, ich bin Dmitry Chekashov!",
+    "subtitle": "Entwickler",
+    "description": "Ich entwickle schöne Oberflächen und leistungsstarke Systeme",
+    "contactButton": "Kontaktiere mich",
+    "projectsButton": "Projekte ansehen"
   },
   "Footer": {
     "allRightsReserved": "Alle Rechte vorbehalten"
