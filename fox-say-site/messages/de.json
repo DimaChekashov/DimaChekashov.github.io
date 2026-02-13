@@ -1,0 +1,29 @@
+{
+  "Metadata": {
+    "siteName": "FoxSay",
+    "defaultTitle": "FoxSay | Portfolio",
+    "defaultDescription": "Ich bin Softwareentwickler. Ich entwickle Webanwendungen mit React, Next.js und TypeScript. Außerdem entwickle ich mit Node.js, Python und Go.",
+    "home": {
+      "title": "FoxSay | Startseite"
+    },
+    "about": {
+      "title": "FoxSay | Über mich"
+    }
+  },
+  "Header": {
+    "Navbar": {
+      "home": "Startseite",
+      "about": "Über mich",
+      "experience": "Erfahrung",
+      "projects": "Projekte",
+      "contact": "Kontakte",
+      "blog": "Blog"
+    }
+  },
+  "HomePage": {
+    "title": "Hallo Welt!"
+  },
+  "Footer": {
+    "allRightsReserved": "Alle Rechte vorbehalten"
+  }
+}

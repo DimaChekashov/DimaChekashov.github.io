@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { LanguageButton } from "./LanguageButton";
+import type { LocaleKey } from "@/shared/lib/contsts";
 
 export const LanguageSwitcher = () => {
   const router = useRouter();
@@ -11,7 +12,7 @@ export const LanguageSwitcher = () => {
     return null;
   }
 
-  const switchLanguage = (locale: string) => {
+  const switchLanguage = (locale: LocaleKey) => {
     const segments = pathname.split("/");
     segments[1] = locale;
     router.push(segments.join("/"));
@@ -31,6 +32,12 @@ export const LanguageSwitcher = () => {
         label="EN"
         disabled={currentLocale === "en"}
         onClick={() => switchLanguage("en")}
+      />
+      <span>/</span>
+      <LanguageButton
+        label="DE"
+        disabled={currentLocale === "de"}
+        onClick={() => switchLanguage("de")}
       />
     </div>
   );

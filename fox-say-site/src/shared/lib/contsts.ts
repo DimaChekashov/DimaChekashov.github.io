@@ -9,3 +9,10 @@ export const ROUTES = {
 } as const;
 
 export const CURRENT_YEAR = new Date().getFullYear();
+
+export const LOCALES = {
+  ru: "ru",
+  en: "en",
+  de: "de",
+} as const;
+export type LocaleKey = (typeof LOCALES)[keyof typeof LOCALES];
