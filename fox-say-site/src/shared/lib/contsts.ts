@@ -16,3 +16,11 @@ export const LOCALES = {
   de: "de",
 } as const;
 export type LocaleKey = (typeof LOCALES)[keyof typeof LOCALES];
+
+export const SOCIAL_LINKS = {
+  habr: "https://career.habr.com/foxsayjs",
+  linkedin: "https://www.linkedin.com/in/foxsayjs",
+  telegram: "https://t.me/FoxSayJS",
+} as const;
+
+export const EMAIL = "foxdima99@gmail.com";

@@ -119,6 +119,10 @@
       }
     ]
   },
+  "ContactPage": {
+    "title": "Contacts",
+    "emailLabel": "My email"
+  },
   "Footer": {
     "allRightsReserved": "All rights reserved"
   }

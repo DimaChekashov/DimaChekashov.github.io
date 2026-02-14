@@ -119,6 +119,10 @@
       }
     ]
   },
+  "ContactPage": {
+    "title": "Контакты",
+    "emailLabel": "Моя почта"
+  },
   "Footer": {
     "allRightsReserved": "Все права защищены"
   }
