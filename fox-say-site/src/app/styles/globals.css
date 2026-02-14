@@ -13,7 +13,7 @@
   --color-secondary-dark-purple: var(--secondary-dark-purple);
   --color-secondary-light-purple: var(--secondary-light-purple);
 
-  --color-text-heading: var(--text-heading);
+  --color-heading: var(--heading);
   --color-text-body: var(--text-body);
   --color-text-muted: var(--text-muted);
   --color-text-light: var(--text-light);
@@ -21,14 +21,14 @@
   --color-border-primary: var(--border-primary);
   --color-border-secondary: var(--border-secondary);
   --color-border-accent: var(--border-accent);
-  
+
   --color-bg-card: var(--bg-card);
   --color-bg-secondary: var(--bg-secondary);
 }
 
 @layer utilities {
   .text-heading {
-    color: var(--text-heading);
+    color: var(--heading);
   }
 
   .text-body {
@@ -102,7 +102,7 @@
   --secondary-dark-purple: #8e44ad;
   --secondary-light-purple: #d7bde2;
 
-  --text-heading: #1c1e21;
+  --heading: #1c1e21;
   --text-body: #1c1e21;
   --text-muted: #65676b;
   --text-light: #ffffff;
@@ -120,7 +120,7 @@
     --background: #18191a;
     --foreground: #e4e6eb;
 
-    --text-heading: #e4e6eb;
+    --heading: #e4e6eb;
     --text-body: #e4e6eb;
     --text-muted: #b0b3b8;
 

@@ -27,6 +27,16 @@
     "contactButton": "Kontaktiere mich",
     "projectsButton": "Projekte ansehen"
   },
+  "AboutPage": {
+    "title": "Über mich",
+    "description": "Hallo, Besucher meiner Portfolio-Website! Mein Name ist Dmitry Chekashov. Ich bin Softwareentwickler mit 10 Jahren Erfahrung in der Webentwicklung.",
+    "careerTitle": "Karriere",
+    "careerDescriptionOne": "2016 entdeckte ich meine Leidenschaft für die Programmierung, als ich vom ersten Jahr des Bauingenieurwesens an einer Fachschule zum Studiengang \"Programmierung in Computersystemen\" wechselte. Parallel zu meinem Studium begann ich meine Karriere als Markup-Entwickler in einer lokalen Webagentur, und nach meinem Abschluss und dem Umzug nach Moskau wechselte ich in die Frontend-Entwicklung mit React.",
+    "careerDescriptionTwo": "Nach einigen Jahren Arbeit mit Benutzeroberflächen entdeckte ich die Backend-Entwicklung für mich. Die ersten sechs Monate beschäftigte ich mich mit PHP und Integrationen, dann wechselte ich zu Python. Seit etwa vier Jahren entwickle ich robuste Serverlösungen mit Django und FastAPI.",
+    "careerDescriptionThree": "Heute löse ich gerne Webaufgaben jeder Komplexität – von anspruchsvollen Oberflächen über verteilte Systeme bis hin zur Einbindung von ML-Modellen. Mein Weg durch verschiedene Entwicklungsebenen gibt mir einen ganzheitlichen Blick auf Projekte und hilft mir, die besten Werkzeuge für jede Aufgabe auszuwählen.",
+    "hobbiesTitle": "Hobbys",
+    "hobbiesDescriptionOne": "In meiner Freizeit gehe ich ins Fitnessstudio, lese Fachliteratur und arbeite an eigenen Projekten. Ich mag auch klassische Literatur — mein Lieblingsautor ist Friedrich Maria Remarque. Ich lerne Fremdsprachen: Englisch (Niveau B2) und Deutsch (A2). Ich interessiere mich für Dokumentarfilme und Filme über herausragende Persönlichkeiten. Meine absoluten Lieblingsfilme sind \"Oppenheimer\" und \"The Man Who Knew Infinity\" (Der Mann, der die Unendlichkeit erkannte)."
+  },
   "Footer": {
     "allRightsReserved": "Alle Rechte vorbehalten"
   }

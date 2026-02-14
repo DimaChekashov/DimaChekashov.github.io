@@ -27,6 +27,16 @@
     "contactButton": "Contact me",
     "projectsButton": "View projects"
   },
+  "AboutPage": {
+    "title": "About me",
+    "description": "Hello, visitor of my portfolio site! My name is Dmitry Chekashov. I'm a software engineer with 10 years of experience in web development.",
+    "careerTitle": "Career",
+    "careerDescriptionOne": "In 2016, I became passionate about programming when I transferred from my first year of construction college to the \"Programming in Computer Systems\" program. While studying, I started my career as a markup developer at a local web studio, and after graduation and moving to Moscow, I transitioned into frontend development with React.",
+    "careerDescriptionTwo": "After several years working with interfaces, I discovered backend development. For the first six months, I studied PHP and worked on integrations, but then I switched to Python. Since then, I've been building robust server-side solutions with Django and FastAPI for about four years.",
+    "careerDescriptionThree": "Today, I enjoy solving web-related problems of any complexity — from sophisticated interfaces to distributed systems and integrating machine learning models. My journey through different layers of development gives me a holistic view of projects and helps me choose the best tools for each task.",
+    "hobbiesTitle": "Hobbies",
+    "hobbiesDescriptionOne": "In my free time, I go to the gym, read technical literature, and work on my own projects. I also enjoy classical literature — my favorite author is Friedrich Maria Remarque. I study foreign languages: English (B2 level) and German (A2). I'm passionate about documentaries and films about outstanding people. My all-time favorite movies are \"Oppenheimer\" and \"The Man Who Knew Infinity\"."
+  },
   "Footer": {
     "allRightsReserved": "All rights reserved"
   }
