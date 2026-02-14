@@ -103,6 +103,22 @@
       }
     ]
   },
+  "ProjectsPage": {
+    "title": "Projekte",
+    "techHeading": "Technologien",
+    "codeButton": "Quellcode",
+    "demoButton": "Demo",
+    "projects": [
+      {
+        "title": "CSS-Generator",
+        "date": "2021",
+        "repoUrl": "https://github.com/DimaChekashov/foxsay-css-generator",
+        "demoUrl": "https://fox-say.ru/foxsay-css-generator",
+        "description": "Dienst zum Generieren von CSS-Code",
+        "techs": ["React"]
+      }
+    ]
+  },
   "Footer": {
     "allRightsReserved": "Alle Rechte vorbehalten"
   }
