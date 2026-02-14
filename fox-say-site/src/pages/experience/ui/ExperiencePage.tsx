@@ -1,20 +1,28 @@
 import { Heading } from "@/shared/ui/Heading";
 import { Text } from "@/shared/ui/Text";
 
-import { education, techDirections, works } from "../model/consts";
+import { techDirections } from "../model/consts";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Education, Work } from "../model/types";
 
 export default function ExperiencePage() {
+  const t = useTranslations("ExperiencePage");
+
+  const education = t.raw("education") as Education[];
+
+  const works = t.raw("works") as Work[];
+
   return (
     <div className="px-4 mt-auto md:px-0">
       <div className="bg-bg-card rounded-2xl p-6 py-8 max-w-4xl mx-auto mb-10 md:p-10">
         <Heading as="h1" className="mb-6 xl:mb-12">
-          Опыт и образование
+          {t("title")}
         </Heading>
 
         <section className="mb-8">
           <Heading as="h2" className="mb-4 xl:mb-6">
-            Технологии
+            {t("titleTech")}
           </Heading>
 
           <div className="flex flex-col gap-8">
@@ -46,11 +54,11 @@ export default function ExperiencePage() {
 
         <section className="mb-8">
           <Heading as="h2" className="mb-4">
-            Образование
+            {t("titleEducation")}
           </Heading>
           <div className="space-y-4">
-            {education.map(({ id, place, period, details }) => (
-              <div key={id} className="p-4 bg-card rounded-lg">
+            {education.map(({ place, period, details }) => (
+              <div key={place} className="p-4 bg-card rounded-lg">
                 <div className="grid grid-cols-1 gap-1 md:grid-cols-[1fr_200px] md:gap-4">
                   <div>
                     <Heading as="h3" className="mb-1 text-lg">
@@ -69,44 +77,42 @@ export default function ExperiencePage() {
 
         <section>
           <Heading as="h2" className="mb-4">
-            Опыт работы
+            {t("titleWork")}
           </Heading>
 
           <div className="space-y-4">
-            {works.map(
-              ({ id, company, role, place, period, responsibilities }) => (
-                <div key={id} className="p-4 bg-card rounded-lg">
-                  <div className="flex flex-col justify-between items-start mb-2 md:flex-row md:items-center">
-                    <div>
-                      <Heading as="h3" className="mb-1 text-lg">
-                        {company}
-                      </Heading>
-                      <Text className="mb-1">{role}</Text>
-                    </div>
-                    <div className="md:text-right">
-                      <Text as="div" className="text-sm">
-                        {place}
-                      </Text>
-                      <Text as="div" className="text-sm text-muted">
-                        {period}
-                      </Text>
-                    </div>
+            {works.map(({ company, role, place, period, responsibilities }) => (
+              <div key={company} className="p-4 bg-card rounded-lg">
+                <div className="flex flex-col justify-between items-start mb-2 md:flex-row md:items-center">
+                  <div>
+                    <Heading as="h3" className="mb-1 text-lg">
+                      {company}
+                    </Heading>
+                    <Text className="mb-1">{role}</Text>
                   </div>
-
-                  {responsibilities && (
-                    <ul className="list-disc pl-5">
-                      {responsibilities.map((responsibility, idx) => (
-                        <li key={idx}>
-                          <Text as="div" className="text-sm">
-                            {responsibility}
-                          </Text>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <div className="md:text-right">
+                    <Text as="div" className="text-sm">
+                      {place}
+                    </Text>
+                    <Text as="div" className="text-sm text-muted">
+                      {period}
+                    </Text>
+                  </div>
                 </div>
-              ),
-            )}
+
+                {responsibilities && (
+                  <ul className="list-disc pl-5">
+                    {responsibilities.map((responsibility, idx) => (
+                      <li key={idx}>
+                        <Text as="div" className="text-sm">
+                          {responsibility}
+                        </Text>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
           </div>
         </section>
       </div>

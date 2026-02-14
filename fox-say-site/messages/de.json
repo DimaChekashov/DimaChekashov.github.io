@@ -37,6 +37,72 @@
     "hobbiesTitle": "Hobbys",
     "hobbiesDescriptionOne": "In meiner Freizeit gehe ich ins Fitnessstudio, lese Fachliteratur und arbeite an eigenen Projekten. Ich mag auch klassische Literatur — mein Lieblingsautor ist Friedrich Maria Remarque. Ich lerne Fremdsprachen: Englisch (Niveau B2) und Deutsch (A2). Ich interessiere mich für Dokumentarfilme und Filme über herausragende Persönlichkeiten. Meine absoluten Lieblingsfilme sind \"Oppenheimer\" und \"The Man Who Knew Infinity\" (Der Mann, der die Unendlichkeit erkannte)."
   },
+  "ExperiencePage": {
+    "title": "Erfahrung & Ausbildung",
+    "titleTech": "Technologien",
+    "titleEducation": "Ausbildung",
+    "titleWork": "Berufserfahrung",
+    "education": [
+      {
+        "place": "Ingenieur- und Wirtschaftskolleg der KFU",
+        "period": "September 2015 — Juni 2019",
+        "details": "Programmierung in Computersystemen, Techniker-Programmierer"
+      },
+      {
+        "place": "JavaScript.ru",
+        "period": "16.09.2025 — 07.10.2025",
+        "details": "Next.js-Entwicklungskurs"
+      }
+    ],
+    "works": [
+      {
+        "company": "Vertrauliches Unternehmen",
+        "place": "Moskau, Russland",
+        "role": "Softwareentwickler",
+        "period": "März 2025 - Heute",
+        "responsibilities": []
+      },
+      {
+        "company": "Rebrain LLC",
+        "place": "Moskau, Russland",
+        "role": "Full-stack Entwickler",
+        "period": "Juni 2021 - November 2024",
+        "responsibilities": [
+          "Entwicklung des Backends mit Django und Django REST Framework",
+          "Erstellung und Optimierung von Datenmodellen, komplexe Datenbankabfragen",
+          "Integration von Zahlungssystemen und Verarbeitung von Webhooks",
+          "Entwicklung von REST-APIs für die Frontend-Interaktion",
+          "Konfiguration des Django-Admin-Panels für die Inhaltsverwaltung",
+          "Erstellung von REST-APIs für clientseitige Anwendungen",
+          "Entwicklung einer Bildungsplattform für DevOps-Ingenieure mit React und Next.js"
+        ]
+      },
+      {
+        "company": "Community Phone",
+        "place": "Remote, Boston, USA",
+        "role": "Frontend-Entwickler",
+        "period": "März 2022 - August 2022",
+        "responsibilities": [
+          "Entwicklung eines Verwaltungsdienstes für Telefonsysteme mit React und Next.js",
+          "Entwicklung responsiver Benutzeroberflächen und Webkomponenten"
+        ]
+      },
+      {
+        "company": "IT Chelny LLC",
+        "place": "Nabereschnyje Tschelny, Russland",
+        "role": "Frontend-Entwickler",
+        "period": "März 2017 - November 2019 | Januar 2021 - Juni 2021",
+        "responsibilities": [
+          "Entwicklung und Wartung von Webanwendungen mit React",
+          "Entwicklung von E-Commerce-Websites, Portalen, Nachrichtenseiten und Unternehmenswebsites",
+          "Responsive-Design-Implementierung für bestehende Projekte",
+          "Optimierung und Beschleunigung von Websites basierend auf PageSpeed Insights-Audits",
+          "Teilnahme an Aufgabenplanung, Schätzung und Code-Reviews",
+          "Entwicklung von JavaScript-Widgets"
+        ]
+      }
+    ]
+  },
   "Footer": {
     "allRightsReserved": "Alle Rechte vorbehalten"
   }

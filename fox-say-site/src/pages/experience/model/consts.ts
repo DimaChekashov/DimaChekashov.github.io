@@ -18,7 +18,7 @@ import postgresql from "@/shared/assets/images/technologies/postgresql.svg";
 import nodejs from "@/shared/assets/images/technologies/nodejs.svg";
 import redis from "@/shared/assets/images/technologies/redis.svg";
 
-import type { Education, TechDirection, Work } from "./types";
+import type { TechDirection, Work } from "./types";
 
 export const techDirections: TechDirection[] = [
   {
@@ -122,21 +122,6 @@ export const techDirections: TechDirection[] = [
         icon: mongodb,
       },
     ],
-  },
-];
-
-export const education: Education[] = [
-  {
-    id: "university",
-    place: "Инженерно-экономический колледж КФУ",
-    period: "Сентябрь 2015 — Июню 2019",
-    details: "Программирование в компьютерных системах, Техник-программист",
-  },
-  {
-    id: "courses",
-    place: "JavaScript.ru",
-    period: "16.09.2025 — 07.10.2025",
-    details: "Курс по разработке на Next.js",
   },
 ];
 

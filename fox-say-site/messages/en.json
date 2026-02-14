@@ -37,6 +37,72 @@
     "hobbiesTitle": "Hobbies",
     "hobbiesDescriptionOne": "In my free time, I go to the gym, read technical literature, and work on my own projects. I also enjoy classical literature — my favorite author is Friedrich Maria Remarque. I study foreign languages: English (B2 level) and German (A2). I'm passionate about documentaries and films about outstanding people. My all-time favorite movies are \"Oppenheimer\" and \"The Man Who Knew Infinity\"."
   },
+  "ExperiencePage": {
+    "title": "Experience & Education",
+    "titleTech": "Technologies",
+    "titleEducation": "Education",
+    "titleWork": "Work Experience",
+    "education": [
+      {
+        "place": "Engineering and Economics College of KFU",
+        "period": "September 2015 — June 2019",
+        "details": "Programming in Computer Systems, Technician-Programmer"
+      },
+      {
+        "place": "JavaScript.ru",
+        "period": "Sep 16, 2025 — Oct 7, 2025",
+        "details": "Next.js Development Course"
+      }
+    ],
+    "works": [
+      {
+        "company": "Confidential Company",
+        "place": "Moscow, Russia",
+        "role": "Software Engineer",
+        "period": "March 2025 - Present",
+        "responsibilities": []
+      },
+      {
+        "company": "Rebrain LLC",
+        "place": "Moscow, Russia",
+        "role": "Full-stack Developer",
+        "period": "June 2021 - November 2024",
+        "responsibilities": [
+          "Designed and developed backend using Django and Django REST Framework",
+          "Created and optimized data models, wrote complex database queries",
+          "Integrated payment systems and processed webhooks",
+          "Developed REST API for frontend interaction",
+          "Configured Django admin panel for content management",
+          "Created REST API for client-side applications",
+          "Developed an educational platform for DevOps engineers using React and Next.js"
+        ]
+      },
+      {
+        "company": "Community Phone",
+        "place": "Remote, Boston, USA",
+        "role": "Frontend Developer",
+        "period": "March 2022 - August 2022",
+        "responsibilities": [
+          "Developed a telephone systems management service using React and Next.js",
+          "Built responsive interfaces and web components"
+        ]
+      },
+      {
+        "company": "IT Chelny LLC",
+        "place": "Naberezhnye Chelny, Russia",
+        "role": "Frontend Developer",
+        "period": "March 2017 - November 2019 | January 2021 - June 2021",
+        "responsibilities": [
+          "Developed and maintained web applications using React",
+          "Built e-commerce websites, portals, news sites, and corporate websites",
+          "Added responsiveness to existing projects",
+          "Optimized and accelerated websites based on PageSpeed Insights audit results",
+          "Participated in task planning, estimation, and code reviews",
+          "Developed JavaScript widgets"
+        ]
+      }
+    ]
+  },
   "Footer": {
     "allRightsReserved": "All rights reserved"
   }
