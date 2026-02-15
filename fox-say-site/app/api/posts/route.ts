@@ -3,23 +3,21 @@ import { prismaClient } from "../../../lib/prisma/prismaClient";
 
 export async function POST(request: NextRequest) {
   try {
-    const { title, slug, content, tags, categories, authorId } =
-      await request.json();
+    const { title, excerpt, slug, content, authorId } = await request.json();
 
-    if (!title || !slug || !content) {
+    if (!title || !excerpt || !slug || !content) {
       return NextResponse.json(
         { error: "All fields must be filled!" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    const post = prismaClient.post.create({
+    const post = await prismaClient.post.create({
       data: {
         title,
         slug,
         content,
-        tags,
-        categories,
+        excerpt,
         authorId,
       },
       select: {
@@ -37,7 +35,7 @@ export async function POST(request: NextRequest) {
         message: "Post created!",
         post,
       },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error) {
     console.log("Error creating post:", error);
@@ -47,7 +45,7 @@ export async function POST(request: NextRequest) {
         success: false,
         error: "Server Error!",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -64,7 +62,7 @@ export async function GET() {
       },
       {
         status: 200,
-      }
+      },
     );
   } catch (error) {
     console.error("Error fetching posts:", error);
@@ -76,7 +74,7 @@ export async function GET() {
       },
       {
         status: 500,
-      }
+      },
     );
   }
 }
