@@ -108,7 +108,7 @@ export const CreatePostForm = () => {
 
       <ArticleEditor onChange={setContent} />
 
-      <Button type="submit" disabled={loading}>
+      <Button htmlType="submit" disabled={loading}>
         Создать пост
       </Button>
 

@@ -63,7 +63,7 @@ export const LoginForm = () => {
         placeholder="********"
         required
       />
-      <Button type="submit" disabled={loading}>
+      <Button htmlType="submit" disabled={loading}>
         Login
       </Button>
       {error && <span className="text-red-500">{error}</span>}

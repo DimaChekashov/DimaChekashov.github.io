@@ -3,22 +3,31 @@ import Link from "next/link";
 
 interface ButtonProps {
   children: React.ReactNode;
-  type?: "button" | "submit" | "reset";
+  htmlType?: "button" | "submit" | "reset";
+  type?: "primary" | "danger";
   onClick?: () => void;
   disabled?: boolean;
   href?: string;
+  className?: string;
 }
 
 export const Button = ({
   children,
-  type = "button",
+  htmlType = "button",
+  type = "primary",
   onClick,
   disabled,
   href,
+  className,
 }: ButtonProps) => {
-  const className = classNames(
-    "bg-primary-blue cursor-pointer rounded-md py-2 px-4 hover:bg-primary-dark-blue active:bg-primary-darker-blue",
+  const buttonClassName = classNames(
+    "cursor-pointer rounded-md py-2 px-4",
     disabled && "opacity-50 cursor-not-allowed",
+    type === "primary" &&
+      "bg-primary-blue hover:bg-primary-dark-blue active:bg-primary-darker-blue",
+    type === "danger" &&
+      "bg-red-500 hover:bg-red-600 active:bg-red-700 text-white",
+    className,
   );
 
   if (href) {
@@ -31,10 +40,10 @@ export const Button = ({
 
   return (
     <button
-      type={type}
+      type={htmlType}
       onClick={onClick}
       disabled={disabled}
-      className={className}
+      className={buttonClassName}
     >
       {children}
     </button>

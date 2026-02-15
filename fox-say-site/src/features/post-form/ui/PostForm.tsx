@@ -53,7 +53,7 @@ export const PostForm = () => {
         placeholder="The post excerpt..."
         required
       />
-      <Button type="submit" disabled={loading}>
+      <Button htmlType="submit" disabled={loading}>
         Create Post
       </Button>
       {error && <span className="text-red-500">{error}</span>}
