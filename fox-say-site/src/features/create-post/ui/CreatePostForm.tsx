@@ -98,7 +98,7 @@ export const CreatePostForm = () => {
       />
 
       <InputField
-        {...register(CREATE_POST_FIELDS.FEATURED_IMAGE, { required: true })}
+        {...register(CREATE_POST_FIELDS.FEATURED_IMAGE, { required: false })}
         error={errors[CREATE_POST_FIELDS.FEATURED_IMAGE]?.message}
         id="featuredImage"
         label="Изображение поста"

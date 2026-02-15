@@ -3,7 +3,8 @@ import { prismaClient } from "../../../lib/prisma/prismaClient";
 
 export async function POST(request: NextRequest) {
   try {
-    const { title, excerpt, slug, content, authorId } = await request.json();
+    const { title, excerpt, slug, content, authorId, featuredImage } =
+      await request.json();
 
     if (!title || !excerpt || !slug || !content) {
       return NextResponse.json(
@@ -19,6 +20,7 @@ export async function POST(request: NextRequest) {
         content,
         excerpt,
         authorId,
+        ...(featuredImage ? { featuredImage } : {}),
       },
       select: {
         id: true,
@@ -27,6 +29,7 @@ export async function POST(request: NextRequest) {
         status: true,
         createdAt: true,
         author: true,
+        featuredImage: true,
       },
     });
 
