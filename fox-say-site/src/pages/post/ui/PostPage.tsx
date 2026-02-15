@@ -21,7 +21,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const { title, content, featuredImage, createdAt } = post.data;
 
   return (
-    <div className="px-4 mt-auto md:px-0">
+    <div className="px-4 md:px-0">
       <div className="bg-bg-card rounded-2xl p-6 py-8 max-w-4xl mx-auto mb-10 md:p-10">
         {featuredImage && (
           <div className="mb-6 overflow-hidden rounded-lg">

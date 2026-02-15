@@ -25,9 +25,8 @@ export default async function AdminPostsPage() {
               >
                 <div>
                   <Link
-                    href={`/post/${post.slug || post.id}`}
+                    href={`/admin/posts/${post.slug || post.id}`}
                     className="hover:underline"
-                    target="_blank"
                   >
                     <Heading as="h3" className="mb-1 text-lg">
                       {post.title}
@@ -41,7 +40,7 @@ export default async function AdminPostsPage() {
                 <div className="flex gap-3 mt-3 md:mt-0">
                   <Button
                     htmlType="button"
-                    href={`/post/${post.slug || post.id}`}
+                    href={`/admin/posts/${post.slug || post.id}`}
                   >
                     View
                   </Button>

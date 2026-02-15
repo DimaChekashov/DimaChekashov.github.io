@@ -3,7 +3,7 @@ import { prismaClient } from "../../../../lib/prisma/prismaClient";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: { id: string } },
 ) {
   try {
     const { id } = await params;
@@ -11,20 +11,20 @@ export async function GET(
     if (!id) {
       return NextResponse.json(
         { message: "Post id is required!" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
+    const numericId = Number(id);
+
     const post = await prismaClient.post.findFirst({
-      where: {
-        id: parseInt(id),
-      },
+      where: Number.isInteger(numericId) ? { id: numericId } : { slug: id },
     });
 
     if (!post) {
       return NextResponse.json(
         { message: "Post is not found!" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -33,7 +33,7 @@ export async function GET(
         success: true,
         data: post,
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.log("Error fetching user:", error);
@@ -42,7 +42,7 @@ export async function GET(
         success: false,
         error: "Failed to fetch post",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
