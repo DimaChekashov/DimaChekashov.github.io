@@ -137,3 +137,78 @@ body {
   background: var(--background);
   font-family: var(--font-roboto), sans-serif;
 }
+
+.rich-text {
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+.rich-text p {
+  margin: 0 0 0.9rem;
+}
+
+.rich-text h1,
+.rich-text h2,
+.rich-text h3,
+.rich-text h4 {
+  margin: 1.2rem 0 0.7rem;
+  color: var(--heading);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.rich-text h1 {
+  font-size: 2rem;
+}
+
+.rich-text h2 {
+  font-size: 1.5rem;
+}
+
+.rich-text h3 {
+  font-size: 1.25rem;
+}
+
+.rich-text ul,
+.rich-text ol {
+  margin: 0.9rem 0;
+  padding-left: 1.5rem;
+}
+
+.rich-text ul {
+  list-style-type: disc;
+}
+
+.rich-text ol {
+  list-style-type: decimal;
+}
+
+.rich-text li {
+  margin: 0.25rem 0;
+}
+
+.rich-text blockquote {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid var(--border-accent);
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--bg-secondary) 65%, transparent);
+}
+
+.rich-text pre {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  background: color-mix(in srgb, #111 86%, transparent);
+  color: #f3f4f6;
+}
+
+.rich-text code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.rich-text a {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}

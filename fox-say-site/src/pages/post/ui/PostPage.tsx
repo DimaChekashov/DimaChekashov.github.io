@@ -44,7 +44,7 @@ export default async function PostPage({ params }: PostPageProps) {
           {title}
         </Heading>
 
-        <article className="prose max-w-none">
+        <article className="rich-text max-w-none">
           {typeof content === "string" && /<[a-z][\s\S]*>/i.test(content) ? (
             <div dangerouslySetInnerHTML={{ __html: content }} />
           ) : (
