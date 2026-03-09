@@ -1,32 +1,38 @@
-import { Roboto } from "next/font/google";
 import Header from "@/widgets/header";
 import Footer from "@/widgets/footer";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "../i18n/routing";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
 import "../styles/globals.css";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-});
-
 interface MetadataProps {
   params: Promise<{ locale: string }>;
+}
+
+async function getLocaleMessages(locale: string) {
+  switch (locale) {
+    case "ru":
+      return (await import("../../../messages/ru.json")).default;
+    case "en":
+      return (await import("../../../messages/en.json")).default;
+    case "de":
+      return (await import("../../../messages/de.json")).default;
+    default:
+      return (await import("../../../messages/ru.json")).default;
+  }
 }
 
 export async function generateMetadata({
   params,
 }: MetadataProps): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Metadata" });
+  const messages = await getLocaleMessages(locale);
 
   return {
-    title: t("defaultTitle"),
-    description: t("defaultDescription"),
+    title: messages.Metadata.defaultTitle,
+    description: messages.Metadata.defaultDescription,
   };
 }
 
@@ -46,10 +52,12 @@ export async function RootLayout({ children, params }: Readonly<Props>) {
     notFound();
   }
 
+  const messages = await getLocaleMessages(locale);
+
   return (
     <html lang={locale}>
-      <body className={`${roboto.variable} antialiased`}>
-        <NextIntlClientProvider>
+      <body className="antialiased">
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="container mx-auto min-h-screen flex flex-col">
             <Header />
             {children}

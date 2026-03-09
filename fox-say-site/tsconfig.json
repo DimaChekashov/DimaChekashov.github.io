@@ -23,5 +23,22 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "legacy",
+    "src/features",
+    "src/pages/admin",
+    "src/pages/admin-posts",
+    "src/pages/create-post",
+    "src/pages/edit-post",
+    "src/pages/login",
+    "src/pages/post",
+    "src/widgets/admin-header",
+    "src/widgets/article-editor",
+    "src/app/providers",
+    "src/shared/ui/AuthGuard",
+    "src/shared/api",
+    "src/shared/lib/auth.ts",
+    "src/app/layouts/admin.tsx"
+  ]
 }
