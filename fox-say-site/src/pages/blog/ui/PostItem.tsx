@@ -8,13 +8,13 @@ interface PostItemProps {
 }
 
 export const PostItem = ({ post }: PostItemProps) => {
-  const { id, title, excerpt, createdAt } = post;
+  const { id, slug, title, excerpt, createdAt } = post;
 
   return (
     <div className="flex flex-col items-start gap-2 bg-secondary rounded px-6 py-4">
       <div className="text-sm">{formatDate(createdAt)}</div>
       <Link
-        href={`${ROUTES.BLOG}/${id}`}
+        href={`${ROUTES.BLOG}/${slug || id}`}
         className="text-2xl text-heading hover:text-primary-blue transition-colors"
       >
         {title}

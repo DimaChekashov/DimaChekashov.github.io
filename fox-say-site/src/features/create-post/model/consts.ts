@@ -4,4 +4,7 @@ export const CREATE_POST_FIELDS = {
   SLUG: "slug",
   FEATURED_IMAGE: "featuredImage",
   CONTENT: "content",
+  STATUS: "status",
+  COMMENT_STATUS: "commentStatus",
+  PUBLISHED_AT: "publishedAt",
 } as const;

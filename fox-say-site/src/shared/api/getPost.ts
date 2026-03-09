@@ -1,4 +1,4 @@
-import { getCurrentDomain } from "../lib/utils";
+import { getCurrentDomain } from "../lib/getCurrentDomain";
 
 export const getPost = async (id: string) => {
   try {

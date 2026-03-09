@@ -1,131 +1,82 @@
 import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcrypt";
+
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log("Seeding is begin...");
+  console.log("Seeding started...");
 
-  const user1 = await prisma.user.create({
-    data: {
-      username: "admin",
-      email: "admin@example.com",
-      passwordHash: "$2b$10$example_hashed_password",
-      displayName: "Администратор",
-      role: "ADMIN",
-      bio: "Главный администратор сайта",
-    },
+  const adminUsername = process.env.ADMIN_USERNAME || "admin";
+  const adminEmail = process.env.ADMIN_EMAIL || "admin@example.com";
+  const adminPassword = process.env.ADMIN_PASSWORD || "admin123";
+  const passwordHash = await bcrypt.hash(adminPassword, 12);
+
+  const admins = await prisma.user.findMany({
+    where: { role: "ADMIN" },
+    select: { id: true },
   });
 
-  console.log("Created users:", user1.username);
+  if (admins.length > 1) {
+    throw new Error("More than one admin exists. Keep exactly one admin user.");
+  }
 
-  const programming = await prisma.category.create({
-    data: {
-      name: "Программирование",
-      slug: "programming",
-      description: "Статьи о программировании и разработке",
-    },
-  });
+  let adminId: number;
 
-  const javascript = await prisma.category.create({
-    data: {
-      name: "JavaScript",
-      slug: "javascript",
-      description: "Все о JavaScript",
-      parentId: programming.id,
-    },
-  });
-
-  const react = await prisma.category.create({
-    data: {
-      name: "React",
-      slug: "react",
-      description: "React и экосистема",
-      parentId: javascript.id,
-    },
-  });
-
-  console.log("Catigories created!");
-
-  const jsTag = await prisma.tag.create({
-    data: {
-      name: "JavaScript",
-      slug: "javascript-tag",
-    },
-  });
-
-  const reactTag = await prisma.tag.create({
-    data: {
-      name: "React",
-      slug: "react-tag",
-    },
-  });
-
-  const webTag = await prisma.tag.create({
-    data: {
-      name: "Web Development",
-      slug: "web-dev",
-    },
-  });
-
-  console.log("Tags created!");
-
-  const post1 = await prisma.post.create({
-    data: {
-      title: "Введение в React",
-      slug: "vvedenie-v-react",
-      content: "Это содержимое статьи о React...",
-      excerpt: "Изучаем основы React библиотеки",
-      authorId: user1.id,
-      status: "PUBLISHED",
-      publishedAt: new Date(),
-      categories: {
-        create: [{ categoryId: react.id }],
+  if (admins.length === 1) {
+    const updatedAdmin = await prisma.user.update({
+      where: { id: admins[0].id },
+      data: {
+        username: adminUsername,
+        email: adminEmail,
+        passwordHash,
+        displayName: "Администратор",
+        role: "ADMIN",
+        isActive: true,
       },
-      tags: {
-        create: [{ tagId: reactTag.id }, { tagId: jsTag.id }],
+      select: { id: true, username: true },
+    });
+
+    adminId = updatedAdmin.id;
+    console.log(`Admin updated: ${updatedAdmin.username}`);
+  } else {
+    const createdAdmin = await prisma.user.create({
+      data: {
+        username: adminUsername,
+        email: adminEmail,
+        passwordHash,
+        displayName: "Администратор",
+        role: "ADMIN",
+        bio: "Главный администратор сайта",
+        isActive: true,
       },
-    },
+      select: { id: true, username: true },
+    });
+
+    adminId = createdAdmin.id;
+    console.log(`Admin created: ${createdAdmin.username}`);
+  }
+
+  const welcomePost = await prisma.post.findUnique({
+    where: { slug: "welcome-to-blog" },
+    select: { id: true },
   });
 
-  const post2 = await prisma.post.create({
-    data: {
-      title: "Современный JavaScript",
-      slug: "sovremenny-javascript",
-      content: "ES6+ возможности JavaScript...",
-      excerpt: "Обзор новых возможностей JavaScript",
-      authorId: user1.id,
-      status: "PUBLISHED",
-      publishedAt: new Date(),
-      categories: {
-        create: [{ categoryId: javascript.id }],
+  if (!welcomePost) {
+    await prisma.post.create({
+      data: {
+        title: "Welcome to the blog",
+        slug: "welcome-to-blog",
+        content:
+          "<p>This is your first post. You can create and publish new posts from the admin panel.</p>",
+        excerpt: "The first post in your blog.",
+        authorId: adminId,
+        status: "PUBLISHED",
+        publishedAt: new Date(),
       },
-      tags: {
-        create: [{ tagId: jsTag.id }, { tagId: webTag.id }],
-      },
-    },
-  });
+    });
+    console.log("Welcome post created.");
+  }
 
-  console.log("Posts created!");
-
-  const comment1 = await prisma.comment.create({
-    data: {
-      content: "Отличная статья! Очень помогла разобраться с React.",
-      postId: post1.id,
-      userId: user1.id,
-      status: "APPROVED",
-    },
-  });
-
-  const comment2 = await prisma.comment.create({
-    data: {
-      content: "Спасибо за подробное объяснение!",
-      postId: post1.id,
-      userId: user1.id,
-      parentId: comment1.id,
-      status: "APPROVED",
-    },
-  });
-
-  console.log("Comments created!");
   console.log("✅ Seeding completed!");
 }
 

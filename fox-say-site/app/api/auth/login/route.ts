@@ -7,6 +7,13 @@ export async function POST(request: NextRequest) {
   try {
     const { username, password } = await request.json();
 
+    if (!username || !password) {
+      return NextResponse.json(
+        { error: "Username and password are required" },
+        { status: 400 },
+      );
+    }
+
     const user = await prismaClient.user.findFirst({
       where: {
         username,
@@ -23,8 +30,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Wrong password" }, { status: 401 });
     }
 
+    if (user.role !== "ADMIN" || !user.isActive) {
+      return NextResponse.json(
+        { error: "Admin account required" },
+        { status: 403 },
+      );
+    }
+
     const token = jwt.sign(
-      { userId: user.id, username: user.username },
+      { userId: user.id, username: user.username, role: user.role },
       process.env.JWT_SECRET || "fallback-secret",
       { expiresIn: "24h" }
     );

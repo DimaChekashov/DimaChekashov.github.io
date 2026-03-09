@@ -4,7 +4,8 @@ import bcrypt from "bcrypt";
 
 export async function POST(request: NextRequest) {
   try {
-    const { username, email, password, displayName } = await request.json();
+    const { username, email, password, displayName, role } =
+      await request.json();
 
     if (!username || !email || !password) {
       return NextResponse.json(
@@ -12,6 +13,8 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    const normalizedRole = role === "ADMIN" ? "ADMIN" : "USER";
 
     const existingUser = await prismaClient.user.findFirst({
       where: {
@@ -28,6 +31,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (normalizedRole === "ADMIN") {
+      const adminExists = await prismaClient.user.findFirst({
+        where: { role: "ADMIN" },
+        select: { id: true },
+      });
+
+      if (adminExists) {
+        return NextResponse.json(
+          { error: "Only one admin account is allowed" },
+          { status: 409 },
+        );
+      }
+    }
+
     const hashedPassword = await bcrypt.hash(password, 12);
 
     const user = await prismaClient.user.create({
@@ -36,6 +53,7 @@ export async function POST(request: NextRequest) {
         email,
         passwordHash: hashedPassword,
         displayName: displayName || username,
+        role: normalizedRole,
       },
       select: {
         id: true,
