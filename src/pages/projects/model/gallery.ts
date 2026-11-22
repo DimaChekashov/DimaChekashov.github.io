@@ -1,0 +1,17 @@
+export const gallery = [
+  ["avtorost", "Avtorost"],
+  ["artsvarka", "Artsvarka"],
+  ["mechanica", "Mechanica"],
+  ["mega-okna", "Mega Okna"],
+  ["okna", "Okna"],
+  ["spectehnika", "Spectehnika"],
+  ["remdizel", "Remdizel"],
+  ["tis", "TIS"],
+  ["berk-group", "Berk Group"],
+  ["kamskaya-mekhanika", "Kamskaya Mekhanika"],
+  ["azimut", "Azimut"],
+  ["rk-metropol", "RK Metropol"],
+  ["technotron", "Technotron"],
+  ["dostup-mebel", "Dostup Mebel"],
+  ["il16", "il16"],
+] as const;
