@@ -13,11 +13,13 @@ async function checkProjectViewer(page, locale, width, screenshotDir) {
   const focusInside = () => page.evaluate(() => document.activeElement.closest("dialog") !== null);
   const isFocused = (element) => element.evaluate((node) => node === document.activeElement);
 
-  assert.equal(await page.locator("a[data-screenshot-title]").count(), 16);
+  assert.equal(await page.locator("a[data-screenshot-title]").count(), await page.locator("main article:has(img)").count());
   await featured.focus();
   await page.keyboard.press("Enter");
   await dialog.waitFor({ state: "visible" });
-  assert.equal(await dialog.getByRole("heading").innerText(), await featured.getAttribute("data-screenshot-title"));
+  const featuredTitle = await featured.getAttribute("data-screenshot-title");
+  assert.equal(await dialog.getByRole("heading").innerText(), featuredTitle);
+  assert.equal(await page.getByRole("dialog", { name: featuredTitle, exact: true }).count(), 1);
   assert(await dialog.getByRole("img").evaluate((img) => img.src.endsWith("/images/projects/css-generator.png")));
   assert(await isFocused(close));
   const closeSize = await close.boundingBox();

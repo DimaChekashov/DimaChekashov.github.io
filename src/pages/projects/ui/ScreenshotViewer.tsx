@@ -39,6 +39,13 @@ export function ScreenshotViewer({ children, closeLabel }: {
     setScreenshot({ src: link.href, title, alt });
   }
 
+  function closeScreenshot() {
+    dialogRef.current?.close();
+    triggerRef.current?.focus({ preventScroll: true });
+    window.scrollTo({ ...pagePosition.current, behavior: "instant" });
+    setScreenshot(null);
+  }
+
   return (
     <>
       <div className="space-y-12 sm:space-y-16" onClick={openScreenshot}>{children}</div>
@@ -59,12 +66,11 @@ export function ScreenshotViewer({ children, closeLabel }: {
           }
         }}
         onClick={(event) => {
-          if (event.target === event.currentTarget) event.currentTarget.close();
+          if (event.target === event.currentTarget) closeScreenshot();
         }}
-        onClose={() => {
-          setScreenshot(null);
-          triggerRef.current?.focus({ preventScroll: true });
-          window.scrollTo({ ...pagePosition.current, behavior: "instant" });
+        onCancel={(event) => {
+          event.preventDefault();
+          closeScreenshot();
         }}
       >
         {screenshot && (
@@ -77,7 +83,7 @@ export function ScreenshotViewer({ children, closeLabel }: {
                 ref={closeRef}
                 type="button"
                 className="min-h-11 shrink-0 rounded-xl bg-secondary px-4 text-sm font-semibold text-link hover:bg-blue-wash"
-                onClick={() => dialogRef.current?.close()}
+                onClick={closeScreenshot}
               >
                 {closeLabel}
               </button>
