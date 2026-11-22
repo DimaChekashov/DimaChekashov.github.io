@@ -1,5 +1,4 @@
 import { Heading } from "@/shared/ui/Heading";
-import { Text } from "@/shared/ui/Text";
 import Image from "next/image";
 
 import habr from "@/shared/assets/images/social/habr.svg";
@@ -8,60 +7,33 @@ import telegram from "@/shared/assets/images/social/telegram.svg";
 import { EMAIL, SOCIAL_LINKS } from "@/shared/lib/contsts";
 import { useTranslations } from "next-intl";
 
+const channels = [
+  { title: "Habr Career", icon: habr, href: SOCIAL_LINKS.habr },
+  { title: "LinkedIn", icon: linkedin, href: SOCIAL_LINKS.linkedin },
+  { title: "Telegram", icon: telegram, href: SOCIAL_LINKS.telegram },
+];
+
 export default function ContactPage() {
   const t = useTranslations("ContactPage");
 
   return (
-    <div className="px-4 mt-auto md:px-6">
-      <div className="bg-bg-secondary rounded-2xl p-6 py-8 max-w-3xl mx-auto mb-10 md:p-10">
-        <Heading as="h1" className="mb-6">
-          {t("title")}
-        </Heading>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
-          <a
-            href={SOCIAL_LINKS.habr}
-            target="_blank"
-            rel="noreferrer"
-            className="flex flex-col items-center gap-3 p-4 bg-secondary rounded-lg text-center hover:text-link"
-          >
-            <div className="w-16 h-16">
-              <Image src={habr} alt="Habr Career" />
-            </div>
-            <Text className="font-semibold">Habr Career</Text>
-          </a>
-
-          <a
-            href={SOCIAL_LINKS.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="flex flex-col items-center gap-3 p-4 bg-secondary rounded-lg text-center hover:text-link"
-          >
-            <div className="w-16 h-16">
-              <Image src={linkedin} alt="LinkedIn" />
-            </div>
-            <Text className="font-semibold">LinkedIn</Text>
-          </a>
-
-          <a
-            href={SOCIAL_LINKS.telegram}
-            target="_blank"
-            rel="noreferrer"
-            className="flex flex-col items-center gap-3 p-4 bg-secondary rounded-lg text-center hover:text-link"
-          >
-            <div className="w-16 h-16">
-              <Image src={telegram} alt="Telegram" />
-            </div>
-            <Text className="font-semibold">Telegram</Text>
-          </a>
+    <div className="page-shell">
+      <div className="mx-auto max-w-4xl">
+        <Heading as="h1" className="page-title">{t("title")}</Heading>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {channels.map(({ title, icon, href }) => (
+            <a key={title} href={href} target="_blank" rel="noreferrer"
+              className="surface flex items-center gap-4 p-5 font-semibold hover:border-link hover:text-link sm:flex-col sm:items-start">
+              <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-blue-wash">
+                <Image src={icon} alt="" className="size-6 object-contain" />
+              </span>
+              {title}
+            </a>
+          ))}
         </div>
-
-        <div className="p-4 bg-secondary rounded-lg text-center">
-          <Text className="mb-1">{t("emailLabel")}:</Text>
-          <a
-            className="text-link underline underline-offset-[0.2em] hover:no-underline"
-            href={`mailto:${EMAIL}`}
-          >
+        <div className="surface mt-5 px-6 py-7 sm:px-8">
+          <p className="mb-2 text-sm font-semibold text-muted">{t("emailLabel")}</p>
+          <a className="text-xl font-semibold text-link underline underline-offset-4 wrap-anywhere" href={`mailto:${EMAIL}`}>
             {EMAIL}
           </a>
         </div>

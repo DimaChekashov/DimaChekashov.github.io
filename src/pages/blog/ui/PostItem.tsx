@@ -11,7 +11,7 @@ export const PostItem = ({ post }: { post: PostCard }) => {
   const locale = isLocale(current) ? current : routing.defaultLocale;
 
   return (
-    <article className="flex min-w-0 flex-col items-start gap-2 rounded-lg bg-secondary px-5 py-4">
+    <article className="surface flex min-w-0 flex-col items-start gap-3 p-6">
       {post.cover && (
         <Image src={post.cover} alt="" width={600} height={300} className="h-auto w-full rounded-md" />
       )}

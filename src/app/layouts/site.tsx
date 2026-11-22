@@ -22,7 +22,7 @@ export async function SiteLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={{ Header: header, Blog: blog }}>
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col">
+      <div className="flex min-h-screen flex-col">
         <Header />
         <main id="main" className="min-w-0 grow">{children}</main>
         <Footer locale={locale} translatedSlugs={translatedSlugs} />

@@ -31,8 +31,8 @@
     "contactButton": "Contact me",
     "description": "I develop beautiful interfaces and high-performance systems",
     "blogButton": "Read the blog",
-    "title": "Hi, I'm Dmitry Chekashov!",
-    "subtitle": "developer",
+    "title": "Dmitry Chekashov",
+    "subtitle": "Frontend and backend developer",
     "projectsButton": "View projects",
     "portrait": "Dmitry Chekashov"
   },
@@ -133,6 +133,7 @@
     ],
     "demoButton": "Demo",
     "galleryTitle": "Client websites",
+    "closeScreenshot": "Close",
     "viewScreenshot": "Open the full screenshot of {title}"
   },
   "ContactPage": {
