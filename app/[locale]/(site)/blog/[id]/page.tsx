@@ -33,13 +33,13 @@ export default async function BlogPostRoute(props: BlogPostRouteProps) {
   const { post, locale } = await loadPost(props);
 
   return (
-    <div className="px-4 md:px-6">
-      <article className="mx-auto mb-10 max-w-4xl rounded-2xl bg-bg-card p-6 md:p-10">
+    <div className="page-shell">
+      <article className="surface mx-auto max-w-4xl px-6 py-9 sm:px-10 sm:py-12">
         <div className="mx-auto max-w-[70ch]">
           <time dateTime={post.date} className="mb-2 block text-sm text-muted">
             {formatDate(post.date, locale)}
           </time>
-          <Heading as="h1" className="mb-3 break-words">{post.title}</Heading>
+          <Heading as="h1" className="mb-5 wrap-anywhere leading-tight tracking-tight">{post.title}</Heading>
           {post.tags.length > 0 && (
             <ul className="mb-6 flex flex-wrap gap-2">
               {post.tags.map((tag) => (

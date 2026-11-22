@@ -1,29 +1,28 @@
 import { Heading } from "@/shared/ui/Heading";
-import { Text } from "@/shared/ui/Text";
 import { useTranslations } from "next-intl";
 
 export default function AboutPage() {
   const t = useTranslations("AboutPage");
 
   return (
-    <div className="px-4 mt-auto md:px-6">
-      <div className="bg-bg-card rounded-2xl p-4 py-6 max-w-200 mx-auto mb-10 md:p-10">
-        <Heading as="h1" className="mb-4">
-          {t("title")}
-        </Heading>
-        <Text className="mb-10">{t("description")}</Text>
-
-        <Heading as="h2" className="mb-4">
-          {t("careerTitle")}
-        </Heading>
-        <Text className="mb-4">{t("careerDescriptionOne")}</Text>
-        <Text className="mb-4">{t("careerDescriptionTwo")}</Text>
-        <Text className="mb-10">{t("careerDescriptionThree")}</Text>
-
-        <Heading as="h2" className="mb-4">
-          {t("hobbiesTitle")}
-        </Heading>
-        <Text>{t("hobbiesDescriptionOne")}</Text>
+    <div className="page-shell">
+      <div className="mx-auto max-w-4xl">
+        <Heading as="h1" className="page-title">{t("title")}</Heading>
+        <div className="surface px-6 py-8 sm:px-10 sm:py-12">
+          <div className="mx-auto max-w-[68ch] space-y-8 leading-relaxed">
+            <p className="text-lg text-muted sm:text-xl">{t("description")}</p>
+            <section className="space-y-4 border-t border-primary pt-7">
+              <h2 className="text-2xl font-bold tracking-tight">{t("careerTitle")}</h2>
+              <p>{t("careerDescriptionOne")}</p>
+              <p>{t("careerDescriptionTwo")}</p>
+              <p>{t("careerDescriptionThree")}</p>
+            </section>
+            <section className="space-y-4 border-t border-primary pt-7">
+              <h2 className="text-2xl font-bold tracking-tight">{t("hobbiesTitle")}</h2>
+              <p>{t("hobbiesDescriptionOne")}</p>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   );

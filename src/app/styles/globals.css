@@ -7,6 +7,7 @@
   --color-foreground: #1c1e21;
   --color-bg-card: #fff;
   --color-secondary: #e8edf5;
+  --color-blue-wash: #eef5ff;
   --color-accent: #1877f2;
   --color-link: #145cbf;
   --color-link-hover: #104994;
@@ -24,6 +25,147 @@ body {
 :focus-visible {
   outline: 3px solid var(--color-link);
   outline-offset: 3px;
+}
+
+@layer components {
+  .site-container,
+  .page-shell {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  .page-shell {
+    padding-block: clamp(1.75rem, 4vw, 3.5rem) clamp(3rem, 7vw, 6rem);
+  }
+
+  .page-title {
+    margin-block-end: clamp(1.25rem, 3vw, 2rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    overflow-wrap: anywhere;
+  }
+
+  .surface {
+    border: 1px solid var(--color-primary);
+    border-radius: 1.5rem;
+    background-color: var(--color-bg-card);
+    box-shadow: 0 12px 32px -24px rgb(18 40 74 / 30%);
+  }
+
+  .button-primary {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    background-color: var(--color-link);
+    padding: 0.625rem 1rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  .button-primary:hover {
+    background-color: var(--color-link-hover);
+  }
+
+  .portrait-panel {
+    background-color: var(--color-link);
+    background-image:
+      radial-gradient(ellipse at 50% 40%, rgb(24 119 242 / 70%), transparent 70%),
+      linear-gradient(rgb(255 255 255 / 9%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 9%) 1px, transparent 1px),
+      linear-gradient(140deg, #15498d, #0b2a57);
+    background-size: auto, 2rem 2rem, 2rem 2rem, auto;
+    background-position: center;
+  }
+
+  .project-preview:focus-visible {
+    outline-offset: -4px;
+  }
+
+  .project-expand {
+    position: absolute;
+    inset-block-start: 0.75rem;
+    inset-inline-end: 0.75rem;
+    display: grid;
+    width: 2.75rem;
+    aspect-ratio: 1;
+    place-items: center;
+    border: 1px solid var(--color-primary);
+    border-radius: 0.75rem;
+    background: var(--color-bg-card);
+    color: var(--color-link);
+    box-shadow: 0 2px 10px rgb(18 40 74 / 20%);
+  }
+
+  .project-expand::before,
+  .project-expand::after {
+    grid-area: 1 / 1;
+    width: 1rem;
+    height: 2px;
+    border-radius: 1rem;
+    background-color: currentColor;
+    content: "";
+  }
+
+  .project-expand::after {
+    rotate: 90deg;
+  }
+
+  .project-dialog {
+    --dialog-height: calc(100dvh - 2rem);
+    position: fixed;
+    inset: 0;
+    width: min(calc(100% - 2rem), 55rem);
+    max-height: var(--dialog-height);
+    margin: auto;
+    overflow: clip;
+    border: 1px solid var(--color-primary);
+    border-radius: 1.125rem;
+    background-color: var(--color-bg-card);
+    color: var(--color-foreground);
+    box-shadow: 0 20px 70px rgb(8 24 51 / 35%);
+  }
+
+  .project-dialog::backdrop {
+    background-color: rgb(8 22 47 / 76%);
+  }
+
+  .project-dialog-content {
+    max-height: calc(var(--dialog-height) - 2px);
+  }
+
+  .project-dialog-scroll:focus-visible {
+    outline-offset: -3px;
+  }
+
+  .select-control {
+    position: relative;
+  }
+
+  .select-control::after {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-end: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border: solid var(--color-link);
+    border-width: 0 2px 2px 0;
+    transform: translateY(-75%) rotate(45deg);
+    pointer-events: none;
+    content: "";
+  }
+}
+
+html:has(.project-dialog) {
+  scrollbar-gutter: stable;
+}
+
+html:has(.project-dialog[open]) {
+  overflow: hidden;
+  background-color: #404b5d;
 }
 
 .rich-text {

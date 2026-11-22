@@ -31,8 +31,8 @@
     "contactButton": "Связаться со мной",
     "description": "Я разрабатываю красивые интерфейсы и производительные системы",
     "blogButton": "Читать блог",
-    "title": "Привет, я Дмитрий Чекашов!",
-    "subtitle": "разработчик",
+    "title": "Дмитрий Чекашов",
+    "subtitle": "Frontend- и backend-разработчик",
     "projectsButton": "Смотреть проекты",
     "portrait": "Дмитрий Чекашов"
   },
@@ -120,7 +120,7 @@
     "codeButton": "Исходный код",
     "projects": [
       {
-        "title": "Css Generator",
+        "title": "CSS Generator",
         "date": "2021",
         "repoUrl": "https://github.com/DimaChekashov/foxsay-css-generator",
         "demoUrl": "https://fox-say.ru/foxsay-css-generator",
@@ -133,6 +133,7 @@
     ],
     "demoButton": "Демо",
     "galleryTitle": "Клиентские сайты",
+    "closeScreenshot": "Закрыть",
     "viewScreenshot": "Открыть полный скриншот сайта {title}"
   },
   "ContactPage": {

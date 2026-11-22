@@ -14,13 +14,13 @@ export default function ExperiencePage() {
   const works = t.raw("works") as Work[];
 
   return (
-    <div className="px-4 mt-auto md:px-6">
-      <div className="bg-bg-secondary rounded-2xl p-6 py-8 max-w-4xl mx-auto mb-10 md:p-10">
-        <Heading as="h1" className="mb-6 xl:mb-12">
+    <div className="page-shell">
+      <div className="mx-auto max-w-5xl">
+        <Heading as="h1" className="page-title">
           {t("title")}
         </Heading>
 
-        <section id="technologies" className="mb-8 scroll-mt-4">
+        <section id="technologies" className="surface mb-6 scroll-mt-4 p-6 sm:p-8">
           <Heading as="h2" className="mb-4 xl:mb-6">
             {t("titleTech")}
           </Heading>
@@ -41,7 +41,7 @@ export default function ExperiencePage() {
                           className="max-w-full max-h-full"
                         />
                       </div>
-                      <Text className="text-[14px] md:text-lg">
+                      <Text className="text-sm">
                         {tech.title}
                       </Text>
                     </div>
@@ -52,13 +52,13 @@ export default function ExperiencePage() {
           </div>
         </section>
 
-        <section className="mb-8">
+        <section className="surface mb-6 p-6 sm:p-8">
           <Heading as="h2" className="mb-4">
             {t("titleEducation")}
           </Heading>
           <div className="space-y-4">
             {education.map(({ place, period, details }) => (
-              <div key={place} className="p-4 bg-secondary rounded-lg">
+              <div key={place} className="rounded-xl border border-primary bg-blue-wash p-4 sm:p-5">
                 <div className="grid grid-cols-1 gap-1 md:grid-cols-[1fr_200px] md:gap-4">
                   <div>
                     <Heading as="h3" className="mb-1 text-lg">
@@ -75,22 +75,22 @@ export default function ExperiencePage() {
           </div>
         </section>
 
-        <section>
+        <section className="surface p-6 sm:p-8">
           <Heading as="h2" className="mb-4">
             {t("titleWork")}
           </Heading>
 
           <div className="space-y-4">
             {works.map(({ company, role, place, period, responsibilities }) => (
-              <div key={company} className="p-4 bg-secondary rounded-lg">
-                <div className="flex flex-col justify-between items-start mb-2 md:flex-row md:items-center">
+              <div key={company} className="rounded-xl border border-primary bg-blue-wash p-4 sm:p-5">
+                <div className="mb-2 grid gap-1 md:grid-cols-[minmax(0,1fr)_200px] md:items-start md:gap-4">
                   <div>
                     <Heading as="h3" className="mb-1 text-lg">
                       {company}
                     </Heading>
                     <Text className="mb-1">{role}</Text>
                   </div>
-                  <div className="md:text-right">
+                  <div>
                     <Text as="div" className="text-sm">
                       {place}
                     </Text>

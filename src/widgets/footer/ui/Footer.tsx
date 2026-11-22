@@ -9,9 +9,11 @@ export async function Footer({ locale, translatedSlugs }: {
 }) {
   const t = await getTranslations({ locale, namespace: "Footer" });
   return (
-    <footer className="mt-auto flex flex-col-reverse items-center justify-between gap-4 border-t border-primary bg-bg-card p-4 text-center md:flex-row md:px-6">
-      <p className="text-sm text-muted">© {CURRENT_YEAR} FoxSay. {t("allRightsReserved")}</p>
-      <LanguageSwitcher translatedSlugs={translatedSlugs} />
+    <footer className="mt-auto border-t border-primary bg-bg-card">
+      <div className="site-container flex flex-col-reverse items-start justify-between gap-4 py-6 sm:flex-row sm:items-center">
+        <p className="text-sm text-muted">© {CURRENT_YEAR} FoxSay. {t("allRightsReserved")}</p>
+        <LanguageSwitcher translatedSlugs={translatedSlugs} />
+      </div>
     </footer>
   );
 }
